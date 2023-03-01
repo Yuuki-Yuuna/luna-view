@@ -1,0 +1,31 @@
+{
+  "name": "@luna-view/build",
+  "version": "0.0.1",
+  "private": true,
+  "description": "",
+  "keywords": [],
+  "license": "ISC",
+  "author": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "gulp --require @esbuild-kit/cjs-loader -f gulpfile.ts"
+  },
+  "devDependencies": {
+    "@esbuild-kit/cjs-loader": "^2.4.1",
+    "@rollup/plugin-commonjs": "^24.0.1",
+    "@rollup/plugin-node-resolve": "^15.0.1",
+    "@types/fs-extra": "^11.0.1",
+    "@vitejs/plugin-vue": "^4.0.0",
+    "@vitejs/plugin-vue-jsx": "^3.0.0",
+    "consola": "^2.15.3",
+    "esbuild": "^0.17.5",
+    "fast-glob": "^3.2.12",
+    "fs-extra": "^11.1.0",
+    "gulp": "^4.0.2",
+    "rollup": "^3.14.0",
+    "rollup-plugin-esbuild": "^5.0.0",
+    "ts-morph": "^17.0.1",
+    "unplugin-vue-define-options": "^1.2.1",
+    "vue": "^3.2.47"
+  }
+}

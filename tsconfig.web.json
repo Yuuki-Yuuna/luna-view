@@ -1,0 +1,11 @@
+{
+  "extends": "./tsconfig.base.json",
+  "compilerOptions": {
+    "composite": true,
+    "jsx": "preserve",
+    "lib": ["ES2018", "DOM", "DOM.Iterable"],
+    "types": ["unplugin-vue-define-options/macros-global"]
+  },
+  "include": ["packages/**/*", "play/**/*"],
+  "exclude": ["**/gulpfile.ts"]
+}

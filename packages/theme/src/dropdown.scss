@@ -1,0 +1,114 @@
+@use 'sass:map';
+
+@use './mixins/mixins.scss' as *;
+
+$dropdown: (
+  'menu-box-shadow': getCssVar('box-shadow', 'light'),
+  'item-hover-fill': getCssVar('fill-color'),
+  'item-hover-color': getCssVar('color-primary', 'third'),
+  'item-active-fill': getCssVar('color-active', 'first'),
+  'item-active-color': getCssVar('color-active', 'fourth'),
+  'menu-index': 10
+);
+
+@include b(dropdown) {
+  @include set-component-css-var('dropdown', $dropdown);
+}
+
+@include b(dropdown) {
+  position: relative;
+  color: getCssVar('text-color', 'regular');
+  font-size: getCssVar('font-size', 'base');
+  line-height: 1;
+
+  &.is-disabled {
+    color: getCssVar('text-color', 'disabled');
+    cursor: not-allowed;
+  }
+
+  @include e(popper) {
+    @include set-component-css-var('dropdown', $dropdown);
+    padding: 0;
+
+    @include b(dropdown__list) {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      box-sizing: border-box;
+    }
+  }
+}
+
+$dropdown-menu-padding-vertical: (
+  'large': 6px,
+  'default': 4px,
+  'small': 2px
+);
+
+$dropdown-item-line-height: (
+  'large': 22px,
+  'default': 22px,
+  'small': 20px
+);
+
+$dropdown-item-padding: (
+  'large': 7px 20px,
+  'default': 5px 16px,
+  'small': 2px 12px
+);
+
+@include b(dropdown-menu) {
+  @include set-component-css-var('dropdown', $dropdown);
+
+  display: block;
+  position: relative;
+  z-index: getCssVar('dropdown-menu', 'index');
+  padding: map.get($dropdown-menu-padding-vertical, 'default') 0;
+  margin: 0;
+  background-color: getCssVar('bg-color', 'overlay');
+  border: none;
+  border-radius: getCssVar('border-radius', 'base');
+  box-shadow: none;
+  list-style: none;
+
+  @include e(item) {
+    display: flex;
+    align-items: center;
+    white-space: nowrap;
+    list-style: none;
+    line-height: map.get($dropdown-item-line-height, 'default');
+    padding: map.get($dropdown-item-padding, 'default');
+    margin: 0;
+    font-size: getCssVar('font-size', 'base');
+    color: getCssVar('text-color', 'regular');
+    cursor: pointer;
+    outline: none;
+
+    &:hover {
+      color: getCssVar('dropdown', 'item', 'hover-fill');
+      background-color: getCssVar('dropdown', 'item', 'hover-color');
+    }
+
+    &:active {
+      color: getCssVar('dropdown', 'item', 'active-fill');
+      background-color: getCssVar('dropdown', 'item', 'active-color');
+    }
+
+    @include when(disabled) {
+      cursor: not-allowed;
+      color: getCssVar('text-colo', 'disabled');
+    }
+  }
+
+  @each $size in (large, small) {
+    @include m($size) {
+      padding: map.get($dropdown-menu-padding-vertical, $size) 0;
+
+      @include e(item) {
+        padding: map.get($dropdown-item-padding, $size);
+        line-height: map.get($dropdown-item-line-height, $size);
+        font-size: getCssVar('font-size', $size);
+      }
+    }
+  }
+}

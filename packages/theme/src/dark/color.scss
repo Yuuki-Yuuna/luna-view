@@ -1,0 +1,39 @@
+@use 'sass:map';
+
+$colors: (
+  'primary': (
+    'first': #6f62ea,
+    'second': #9278f3,
+    'third': #a697f4,
+    'fourth': #d6cffa
+  ),
+  'active': (
+    'first': #3e3b63,
+    'second': #545472,
+    'third': #7a7996,
+    'fourth': #7a7996
+  )
+);
+
+$primary-color: map-get($colors, 'primary');
+$active-color: map-get($colors, 'active');
+
+$text-color: (
+  'primary': #ececec,
+  'regular': #bab1c0,
+  'placeholder': #766b81,
+  'disabled': #41374d
+);
+
+$border-color: (
+  '': #ececec
+);
+
+$fill-color: (
+  '': #ececec
+);
+
+$bg-color: (
+  '': transparent,
+  'overlay': #333333,
+);

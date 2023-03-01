@@ -1,0 +1,24 @@
+@use './common/var.scss' as *;
+@use './common/color.scss' as *;
+@use './mixins/mixins.scss' as *;
+@use './dark/dark.scss' as *;
+
+html {
+  color-scheme: light;
+
+  // color
+  @include set-component-css-var('color-primary', $primary-color);
+  @include set-component-css-var('color-active', $active-color);
+  @include set-component-css-var('text-color', $text-color);
+  @include set-component-css-var('border-color', $border-color);
+  @include set-component-css-var('fill-color', $fill-color);
+  @include set-component-css-var('bg-color', $bg-color);
+
+  // var
+  @include set-component-css-var('font-size', $font-size);
+  @include set-component-css-var('font-weight', $font-weight);
+  @include set-component-css-var('border', $border);
+  @include set-component-css-var('box-shadow', $box-shadow);
+  @include set-component-css-var('border-radius', $border-radius);
+  @include set-component-css-var('line-height', $line-height);
+}

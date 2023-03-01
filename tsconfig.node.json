@@ -1,0 +1,10 @@
+{
+  "extends": "./tsconfig.base.json",
+  "compilerOptions": {
+    "moduleResolution": "nodenext",
+    "composite": true,
+    "lib": ["ESNext"],
+    "types": ["node"]
+  },
+  "include": ["build/**/*", "config/**/*", "packages/theme/*", "packages/luna-view/package.json"]
+}

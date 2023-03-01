@@ -1,0 +1,64 @@
+@use './config.scss';
+
+// BEM support Func
+@function selectorToString($selector) {
+  $selector: inspect($selector);
+  $selector: str-slice($selector, 2, -2); //传入的selector末尾都有逗号
+  @return $selector;
+}
+
+@function containsModifier($selector) {
+  $selector: selectorToString($selector);
+
+  @if str-index($selector, config.$modifier-separator) {
+    @return true;
+  } @else {
+    @return false;
+  }
+}
+
+@function containWhenFlag($selector) {
+  $selector: selectorToString($selector);
+
+  @if str-index($selector, '.' + config.$state-prefix) {
+    @return true;
+  } @else {
+    @return false;
+  }
+}
+
+@function containPseudoClass($selector) {
+  $selector: selectorToString($selector);
+
+  @if str-index($selector, ':') {
+    @return true;
+  } @else {
+    @return false;
+  }
+}
+
+@function hasSpecialNestRule($selector) {
+  @return containsModifier($selector) or containWhenFlag($selector) or containPseudoClass($selector);
+}
+
+// join var name
+// joinVarName(('button', 'text-color')) => '--lu-button-text-color'
+@function joinVarName($list) {
+  $name: '--' + config.$namespace;
+  @each $item in $list {
+    @if $item != '' {
+      $name: $name + '-' + $item;
+    }
+  }
+  @return $name;
+}
+
+// getCssVarName('button', 'text-color') => '--lu-button-text-color'
+@function getCssVarName($args...) {
+  @return joinVarName($args);
+}
+
+// getCssVar('button', 'text-color') => var(--lu-button-text-color)
+@function getCssVar($args...) {
+  @return var(#{joinVarName($args)});
+}

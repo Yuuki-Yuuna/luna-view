@@ -1,0 +1,10 @@
+@use './base.scss';
+@use './common/transition.scss';
+
+//组件样式
+@use './button.scss';
+@use './popper.scss';
+@use './tooltip.scss';
+@use './popover.scss';
+@use './scrollbar.scss';
+@use './dropdown.scss';

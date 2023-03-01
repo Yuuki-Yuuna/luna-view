@@ -1,0 +1,46 @@
+$font-size: (
+  'extra-large': 20px,
+  'large': 18px,
+  'medium': 16px,
+  'base': 14px,
+  'small': 13px,
+  'extra-small': 12px
+);
+
+$font-weight: (
+  'primary': 500
+);
+
+$border: (
+  'primary': 1px solid
+);
+
+$box-shadow: (
+  '': (
+    0px 12px 32px 4px rgba(0, 0, 0, 0.04),
+    0px 8px 20px rgba(0, 0, 0, 0.08)
+  ),
+  'light': (
+    0px 0px 12px rgba(0, 0, 0, 0.12)
+  ),
+  'lighter': (
+    0px 0px 6px rgba(0, 0, 0, 0.12)
+  ),
+  'dark': (
+    0px 16px 48px 16px rgba(0, 0, 0, 0.08),
+    0px 12px 32px rgba(0, 0, 0, 0.12),
+    0px 8px 16px -8px rgba(0, 0, 0, 0.16)
+  )
+);
+
+$border-radius: (
+  'base': 4px,
+  'small': 2px,
+  'large': 6px,
+  'round': 20px,
+  'circle': 100%
+);
+
+$line-height: (
+  'primary': 24px
+);

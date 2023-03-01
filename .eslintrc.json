@@ -1,0 +1,4 @@
+{
+  "root": true,
+  "extends": ["@luna-view/eslint-config"]
+}

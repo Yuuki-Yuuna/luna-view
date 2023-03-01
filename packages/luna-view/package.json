@@ -1,0 +1,23 @@
+{
+  "name": "luna-view",
+  "version": "1.0.2",
+  "description": "",
+  "keywords": [],
+  "license": "ISC",
+  "author": "",
+  "main": "index.js",
+  "module": "index.js",
+  "types": "index.d.ts",
+  "peerDependencies": {
+    "vue": "^3.2.25"
+  },
+  "dependencies": {
+    "@popperjs/core": "^2.11.6",
+    "@vueuse/core": "^9.13.0"
+  },
+  "devDependencies": {
+    "@types/node": "*",
+    "vue": "^3.2.37",
+    "vue-router": "^4.0.16"
+  }
+}

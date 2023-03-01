@@ -1,0 +1,122 @@
+@use 'sass:map';
+
+@use './mixins/mixins.scss' as *;
+
+$button-height: (
+  'large': 40px,
+  'default': 32px,
+  'small': 24px
+);
+
+$button-padding-vertical: (
+  'large': 12px,
+  'default': 9px,
+  'small': 6px,
+  'circle': 8px
+);
+
+$button-padding-horizontal: (
+  'large': 16px,
+  'default': 14px,
+  'small': 12px,
+  'circle': 8px
+);
+
+$button: (
+  'font-weight': getCssVar('font-weight-primary'),
+  'border-color': getCssVar('color-primary', 'first'),
+  'bg-color': getCssVar('color-primary', 'first'),
+  'text-color': getCssVar('fill-color'),
+  'disabled-bg-color': getCssVar('text-color', 'disabled'),
+  'disabled-border-color': getCssVar('text-color', 'disabled'),
+  'hover-text-color': getCssVar('fill-color'),
+  'hover-bg-color': getCssVar('color-primary', 'second'),
+  'hover-border-color': getCssVar('color-primary', 'second'),
+  'active-border-color': getCssVar('color-active', 'first'),
+  'active-bg-color': getCssVar('color-active', 'first'),
+  'active-text-color': getCssVar('fill-color')
+);
+
+@include b(button) {
+  @include set-component-css-var('button', $button);
+}
+
+@include b(button) {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  line-height: 1;
+  height: map-get($button-height, 'default');
+  white-space: nowrap;
+  cursor: pointer;
+  color: getCssVar('button', 'text-color');
+  text-align: center;
+  box-sizing: border-box;
+  outline: none;
+  user-select: none;
+  font-size: getCssVar('font-size', 'medium');
+  font-weight: getCssVar('button', 'font-weight');
+  background-color: getCssVar('button', 'bg-color');
+  border: getCssVar('border', 'primary');
+  border-color: getCssVar('button', 'border-color');
+  border-radius: getCssVar('border-radius', 'base');
+  padding: map-get($button-padding-vertical, 'default')
+    map-get($button-padding-horizontal, 'default');
+
+  &:hover,
+  &:focus {
+    color: getCssVar('button', 'hover', 'text-color');
+    border-color: getCssVar('button', 'hover', 'border-color');
+    background-color: getCssVar('button', 'hover', 'bg-color');
+    outline: none;
+  }
+
+  &:active {
+    color: getCssVar('button', 'active', 'text-color');
+    border-color: getCssVar('button', 'active', 'border-color');
+    background-color: getCssVar('button', 'active', 'bg-color');
+    outline: none;
+  }
+
+  > span {
+    display: inline-flex;
+    align-items: center;
+  }
+
+  @include when(plain) {
+    @include css-var-from-global(('button', 'text-color'), ('text-color', 'primary'));
+    @include css-var-from-global(('button', 'bg-color'), 'bg-color');
+    @include css-var-from-global(('button', 'border-color'), 'border-color');
+    @include css-var-from-global(('button', 'hover', 'text-color'), ('color-primary', 'first'));
+    @include css-var-from-global(('button', 'hover', 'bg-color'), 'fill');
+    @include css-var-from-global(('button', 'active', 'bg-color'), ('color-primary', 'first'));
+    @include css-var-from-global(('button', 'active', 'border-color'), ('color-primary', 'first'));
+    @include css-var-from-global(('button', 'active', 'text-color'), 'fill-color');
+  }
+
+  @include when(round) {
+    border-radius: getCssVar('border-radius', 'round');
+  }
+
+  @include when(circle) {
+    font-size: getCssVar('font-size', 'extra-small');
+    width: map-get($button-height, 'default');
+    padding: map-get($button-padding-horizontal, 'circle');
+    border-radius: getCssVar('border-radius', 'circle');
+  }
+
+  @include when(disabled) {
+    cursor: not-allowed;
+    background-color: getCssVar('button', 'disabled', 'bg-color');
+    border-color: getCssVar('button', 'disabled', 'border-color');
+  }
+
+  @each $size in (small, large) {
+    @include m($size) {
+      height: map-get($button-height, $size);
+      padding: map-get($button-padding-vertical, $size) map-get($button-padding-horizontal, $size);
+      font-size: getCssVar('font-size', $size);
+      border-radius: getCssVar('border-radius', $size);
+    }
+  }
+}
