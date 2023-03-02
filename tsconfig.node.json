@@ -1,7 +1,6 @@
 {
   "extends": "./tsconfig.base.json",
   "compilerOptions": {
-    "moduleResolution": "nodenext",
     "composite": true,
     "lib": ["ESNext"],
     "types": ["node"]
