@@ -30,3 +30,8 @@ $transition-function-fast-bezier: cubic-bezier(0.23, 1, 0.32, 1);
   opacity: 0;
   transform: scaleY(0);
 }
+
+.#{$namespace}-collapse-transition-leave-active,
+.#{$namespace}-collapse-transition-enter-active {
+  transition: 0.3s max-height ease-in-out;
+}
