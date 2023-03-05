@@ -1,0 +1,29 @@
+{
+  "name": "@luna-view/docs",
+  "version": "0.0.1",
+  "private": true,
+  "keywords": [],
+  "license": "ISC",
+  "author": "",
+  "scripts": {
+    "dev": "vitepress dev .",
+    "build": "vitepress build ."
+  },
+  "dependencies": {
+    "@vueuse/core": "^9.13.0",
+    "highlight.js": "^11.7.0",
+    "markdown-it": "^13.0.1",
+    "markdown-it-container": "^3.0.0"
+  },
+  "devDependencies": {
+    "@types/markdown-it": "^12.2.3",
+    "@types/markdown-it-container": "^2.0.5",
+    "@vitejs/plugin-vue-jsx": "^3.0.0",
+    "glob": "^9.2.1",
+    "sass": "^1.57.1",
+    "unplugin-vue-components": "^0.24.0",
+    "unplugin-vue-define-options": "^1.2.3",
+    "vite": "^4.0.4",
+    "vitepress": "1.0.0-alpha.49"
+  }
+}

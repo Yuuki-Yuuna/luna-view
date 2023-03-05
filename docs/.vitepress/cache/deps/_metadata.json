@@ -1,0 +1,29 @@
+{
+  "hash": "8ce4bde2",
+  "browserHash": "21521af6",
+  "optimized": {
+    "vue": {
+      "src": "../../../../node_modules/.pnpm/registry.npmmirror.com+vue@3.2.36/node_modules/vue/dist/vue.runtime.esm-bundler.js",
+      "file": "vue.js",
+      "fileHash": "1f98ce23",
+      "needsInterop": false
+    },
+    "@vueuse/core": {
+      "src": "../../../../node_modules/.pnpm/registry.npmmirror.com+@vueuse+core@9.13.0_vue@3.2.36/node_modules/@vueuse/core/index.mjs",
+      "file": "@vueuse_core.js",
+      "fileHash": "8bccd5f7",
+      "needsInterop": false
+    },
+    "@popperjs/core": {
+      "src": "../../../../node_modules/.pnpm/registry.npmmirror.com+@popperjs+core@2.11.6/node_modules/@popperjs/core/lib/index.js",
+      "file": "@popperjs_core.js",
+      "fileHash": "fc4de068",
+      "needsInterop": false
+    }
+  },
+  "chunks": {
+    "chunk-4HZL7SK5": {
+      "file": "chunk-4HZL7SK5.js"
+    }
+  }
+}
