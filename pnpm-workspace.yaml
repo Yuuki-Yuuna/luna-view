@@ -3,3 +3,4 @@ packages:
   - play
   - config/*
   - build
+  - docs

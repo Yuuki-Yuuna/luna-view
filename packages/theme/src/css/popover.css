@@ -1,0 +1,39 @@
+.lu-popover {
+  --lu-popover-bg-color: var(--lu-bg-color-overlay);
+  --lu-popover-font-size: var(--lu-font-size-base);
+  --lu-popover-border-color: var(--lu-border-color-lighter);
+  --lu-popover-padding: 12px;
+  --lu-popover-padding-large: 18px 20px;
+  --lu-popover-title-font-size: 16px;
+  --lu-popover-title-text-color: var(--lu-text-color-primary);
+  --lu-popover-border-radius: var(--lu-border-radius-base);
+}
+
+.lu-popover.lu-popper {
+  background: var(--lu-popover-bg-color);
+  min-width: 150px;
+  border-radius: var(--lu-popover-border-radius);
+  border: 1px solid var(--lu-popover-border-color);
+  padding: var(--lu-popover-padding);
+  z-index: 1000;
+  color: var(--lu-text-color-regular);
+  line-height: 1.4;
+  text-align: justify;
+  font-size: var(--lu-popover-font-size);
+  box-shadow: var(--lu-box-shadow-light);
+  word-break: break-all;
+  box-sizing: border-box;
+}
+.lu-popover__title {
+  color: var(--lu-popover-title-text-color);
+  font-size: var(--lu-popover-title-font-size);
+  line-height: 1;
+  margin-bottom: 12px;
+}
+
+.lu-popover.lu-popper.is-dark {
+  --lu-popover-bg-color: var(--lu-text-color-primary);
+  --lu-popover-border-color: var(--lu-text-color-primary);
+  --lu-popover-title-text-color: var(--lu-bg-color);
+  color: var(--lu-bg-color);
+}

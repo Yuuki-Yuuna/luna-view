@@ -1,0 +1,71 @@
+.lu-scrollbar {
+  --lu-scrollbar-opacity: 0.3;
+  --lu-scrollbar-bg-color: var(--lu-text-color-regular);
+  --lu-scrollbar-hover-opacity: 0.5;
+  --lu-scrollbar-hover-bg-color: var(--lu-text-color-regular);
+}
+
+.lu-scrollbar {
+  overflow: hidden;
+  position: relative;
+  height: 100%;
+}
+.lu-scrollbar__wrap {
+  overflow: auto;
+  height: 100%;
+}
+.lu-scrollbar__wrap--hidden-default {
+  scrollbar-width: none;
+}
+.lu-scrollbar__wrap--hidden-default::-webkit-scrollbar {
+  display: none;
+}
+
+.lu-scrollbar__thumb {
+  position: relative;
+  display: block;
+  width: 0;
+  height: 0;
+  cursor: pointer;
+  border-radius: inherit;
+  background-color: var(--lu-scrollbar-bg-color);
+  transition: 0.3s background-color;
+  opacity: var(--lu-scrollbar-opacity);
+}
+.lu-scrollbar__thumb:hover {
+  background-color: var(--lu-scrollbar-hover-bg-color);
+  opacity: var(--lu-scrollbar-hover-opacity);
+}
+
+.lu-scrollbar__bar {
+  position: absolute;
+  right: 2px;
+  bottom: 2px;
+  z-index: 1;
+  border-radius: 4px;
+}
+.lu-scrollbar__bar.is-vertical {
+  width: 6px;
+  top: 2px;
+}
+.lu-scrollbar__bar.is-vertical > div {
+  width: 100%;
+}
+
+.lu-scrollbar__bar.is-horizontal {
+  height: 6px;
+  left: 2px;
+}
+.lu-scrollbar__bar.is-horizontal > div {
+  height: 100%;
+}
+
+.lu-scrollbar-fade-enter-active {
+  transition: opacity 340ms ease-out;
+}
+.lu-scrollbar-fade-leave-active {
+  transition: opacity 120ms ease-out;
+}
+.lu-scrollbar-fade-enter-from, .lu-scrollbar-fade-leave-active {
+  opacity: 0;
+}

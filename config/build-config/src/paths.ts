@@ -8,3 +8,6 @@ export const lvRoot = resolve(pkgRoot, 'luna-view')
 export const buildOutput = resolve(projRoot, 'dist')
 export const lvOutput = resolve(buildOutput, 'luna-view') //luna-view output
 export const lvPackage = resolve(lvRoot, 'package.json')
+
+export const docRoot = resolve(projRoot, 'docs')
+export const vpRoot = resolve(docRoot, '.vitepress')

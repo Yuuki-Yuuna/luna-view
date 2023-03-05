@@ -15,6 +15,8 @@
     "clean:dist": "rimraf dist",
     "build": "pnpm run -C build build",
     "build:theme": "pnpm run -C packages/themes build",
+    "docs:dev": "pnpm run -C docs dev",
+    "docs:build": "pnpm run -C docs build",
     "stub": "pnpm run -r --parallel stub",
     "postinstall": "pnpm stub"
   },

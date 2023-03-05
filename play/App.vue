@@ -11,11 +11,6 @@
         </LuDropdownMenu>
       </template>
     </LuDropdown> -->
-    <LuCollapseTransition>
-      <div v-show="show">
-        <div class="test">下拉</div>
-      </div>
-    </LuCollapseTransition>
   </div>
 </template>
 
@@ -24,6 +19,7 @@ import { ref } from 'vue'
 import {
   LuButton,
   LuCollapseTransition,
+  LuDivider,
   LuDropdown,
   LuDropdownItem,
   LuDropdownMenu,

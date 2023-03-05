@@ -1,0 +1,19 @@
+html.dark {
+  color-scheme: dark;
+  --lu-color-primary-first: #6f62ea;
+  --lu-color-primary-second: #9278f3;
+  --lu-color-primary-third: #a697f4;
+  --lu-color-primary-fourth: #d6cffa;
+  --lu-color-active-first: #3e3b63;
+  --lu-color-active-second: #545472;
+  --lu-color-active-third: #7a7996;
+  --lu-color-active-fourth: #7a7996;
+  --lu-text-color-primary: #ececec;
+  --lu-text-color-regular: #bab1c0;
+  --lu-text-color-placeholder: #766b81;
+  --lu-text-color-disabled: #41374d;
+  --lu-border-color: #ececec;
+  --lu-fill-color: #ececec;
+  --lu-bg-color: transparent;
+  --lu-bg-color-overlay: #333333;
+}

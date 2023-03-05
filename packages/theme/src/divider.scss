@@ -1,0 +1,22 @@
+@use 'mixins/mixins' as *;
+@include b(divider) {
+  position: relative;
+
+  @include m(horizontal) {
+    display: block;
+    height: 1px;
+    width: 100%;
+    margin: 12px 0;
+    border-top: 1px solid getCssVar('border-color');
+  }
+
+  @include m(vertical) {
+    display: inline-block;
+    width: 1px;
+    height: 1em;
+    margin: 0 8px;
+    vertical-align: middle;
+    position: relative;
+    border-left: 1px solid getCssVar('border-color');
+  }
+}
