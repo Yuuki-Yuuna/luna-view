@@ -1,16 +1,12 @@
 <template>
   <LuButton round plain @click="() => (show = !show)">按钮</LuButton>
   <div :style="{ display: 'flex', justifyContent: 'center', marginTop: '150px' }">
-    <!-- <LuDropdown>
-      <LuButton round plain>按钮</LuButton>
-      <template #dropdown>
-        <LuDropdownMenu>
-          <LuDropdownItem>下拉菜单1</LuDropdownItem>
-          <LuDropdownItem>下拉菜单2</LuDropdownItem>
-          <LuDropdownItem>下拉菜单3</LuDropdownItem>
-        </LuDropdownMenu>
-      </template>
-    </LuDropdown> -->
+    <LuSpace direction="vertical" wrap gap="large">
+      <LuButton>按钮1</LuButton>
+      <LuButton>按钮2</LuButton>
+      <LuButton>按钮3</LuButton>
+      <LuButton>按钮4</LuButton>
+    </LuSpace>
   </div>
 </template>
 
@@ -23,7 +19,8 @@ import {
   LuDropdown,
   LuDropdownItem,
   LuDropdownMenu,
-  LuScrollbar
+  LuScrollbar,
+  LuSpace
 } from '@luna-view/components'
 
 const show = ref(false)

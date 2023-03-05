@@ -1,12 +1,12 @@
 <template>
   <lu-space direction="vertical" gap="large">
     <lu-space>
-      <lu-button>default</lu-button>
-      <lu-button plain>plain</lu-button>
+      <lu-button disabled>default</lu-button>
+      <lu-button plain disabled>plain</lu-button>
     </lu-space>
     <lu-space>
-      <lu-button round>default</lu-button>
-      <lu-button round plain>plain</lu-button>
+      <lu-button round disabled>default</lu-button>
+      <lu-button round plain disabled>plain</lu-button>
     </lu-space>
   </lu-space>
 </template>

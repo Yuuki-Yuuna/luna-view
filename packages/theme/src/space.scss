@@ -1,0 +1,23 @@
+@use 'sass:map';
+@use 'mixins/mixins' as *;
+
+$space-gap: (
+  'small': 6px,
+  'large': 14px
+);
+
+@include b(space) {
+  display: flex;
+  gap: 8px;
+  box-sizing: border-box;
+
+  @include m(vertical) {
+    flex-direction: column;
+  }
+
+  @each $size in (small, large) {
+    @include m($size) {
+      gap: map-get($space-gap, $size);
+    }
+  }
+}

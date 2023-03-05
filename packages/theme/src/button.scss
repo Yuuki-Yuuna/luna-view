@@ -27,8 +27,9 @@ $button: (
   'border-color': getCssVar('color-primary', 'first'),
   'bg-color': getCssVar('color-primary', 'first'),
   'text-color': getCssVar('fill-color'),
-  'disabled-bg-color': getCssVar('text-color', 'disabled'),
-  'disabled-border-color': getCssVar('text-color', 'disabled'),
+  'disabled-bg-color': getCssVar('color-primary', 'first'),
+  'disabled-border-color': getCssVar('color-primary', 'first'),
+  'disabled-text-color': getCssVar('fill-color'),
   'hover-text-color': getCssVar('fill-color'),
   'hover-bg-color': getCssVar('color-primary', 'second'),
   'hover-border-color': getCssVar('color-primary', 'second'),
@@ -92,6 +93,9 @@ $button: (
     @include css-var-from-global(('button', 'active', 'bg-color'), ('color-primary', 'first'));
     @include css-var-from-global(('button', 'active', 'border-color'), ('color-primary', 'first'));
     @include css-var-from-global(('button', 'active', 'text-color'), 'fill-color');
+    @include css-var-from-global(('button', 'disabled', 'text-color'), ('text-color', 'primary'));
+    @include css-var-from-global(('button', 'disabled', 'bg-color'), 'bg-color');
+    @include css-var-from-global(('button', 'disabled', 'border-color'), 'border-color');
   }
 
   @include when(round) {
@@ -107,8 +111,10 @@ $button: (
 
   @include when(disabled) {
     cursor: not-allowed;
+    color: getCssVar('button', 'disabled', 'text-color');
     background-color: getCssVar('button', 'disabled', 'bg-color');
     border-color: getCssVar('button', 'disabled', 'border-color');
+    opacity: 0.4;
   }
 
   @each $size in (small, large) {

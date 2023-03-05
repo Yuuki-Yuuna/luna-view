@@ -30,7 +30,7 @@ import {
   watchEffect
 } from "./chunk-4HZL7SK5.js";
 
-// ../node_modules/.pnpm/registry.npmmirror.com+vue-demi@0.13.11_vue@3.2.36/node_modules/vue-demi/lib/index.mjs
+// ../node_modules/.pnpm/registry.npmmirror.com+vue-demi@0.13.11/node_modules/vue-demi/lib/index.mjs
 var isVue2 = false;
 var isVue3 = true;
 function set(target, key, val) {
@@ -50,7 +50,7 @@ function del(target, key) {
   delete target[key];
 }
 
-// ../node_modules/.pnpm/registry.npmmirror.com+@vueuse+shared@9.13.0_vue@3.2.36/node_modules/@vueuse/shared/index.mjs
+// ../node_modules/.pnpm/registry.npmmirror.com+@vueuse+shared@9.13.0/node_modules/@vueuse/shared/index.mjs
 var __defProp$9 = Object.defineProperty;
 var __defProps$6 = Object.defineProperties;
 var __getOwnPropDescs$6 = Object.getOwnPropertyDescriptors;
@@ -1549,7 +1549,7 @@ function whenever(source, cb, options) {
   }, options);
 }
 
-// ../node_modules/.pnpm/registry.npmmirror.com+@vueuse+core@9.13.0_vue@3.2.36/node_modules/@vueuse/core/index.mjs
+// ../node_modules/.pnpm/registry.npmmirror.com+@vueuse+core@9.13.0/node_modules/@vueuse/core/index.mjs
 function computedAsync(evaluationCallback, initialState, optionsOrRef) {
   let options;
   if (isRef(optionsOrRef)) {
