@@ -1,5 +1,5 @@
 <template>
-  <div :class="spaceClass" :style="spaceStyle">
+  <div :class="[spaceClass]" :style="spaceStyle">
     <slot />
   </div>
 </template>
@@ -19,7 +19,7 @@ defineOptions({
 const props = defineProps(spaceProps)
 
 const spaceClass = computed(() => {
-  const className = [ns.b(), ns.m(props.direction)]
+  const className = [ns.b(), ns.m(props.direction), ns.m(props.algin)]
   if (isString(props.gap)) {
     className.push(ns.m(props.gap))
   }

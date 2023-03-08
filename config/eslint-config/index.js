@@ -128,7 +128,7 @@ module.exports = defineConfig({
     '@typescript-eslint/no-empty-function': 'off',
 
     'vue/multi-word-component-names': 'off',
-    'vue/prefer-import-from-vue': 'warn',
+    'vue/prefer-import-from-vue': 'off', //这个要不得
 
     'import/first': 'error',
     'import/no-duplicates': 'error',

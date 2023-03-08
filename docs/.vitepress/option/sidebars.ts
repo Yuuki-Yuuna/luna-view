@@ -2,6 +2,10 @@ const guideSidebar = [
   {
     text: '快速开始',
     link: '/guide/quickstart'
+  },
+  {
+    text: '夜间模式',
+    link: '/guide/dark-mode'
   }
 ]
 

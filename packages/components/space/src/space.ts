@@ -8,7 +8,8 @@ type Size = 'small' | 'middle' | 'large' | [number, number]
 
 export const spaceProps = buildProps({
   algin: {
-    type: definePropType<Algin>(String)
+    type: definePropType<Algin>(String),
+    default: 'center'
   },
   direction: {
     type: definePropType<'vertical' | 'horizontal'>(String),

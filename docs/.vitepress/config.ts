@@ -10,7 +10,9 @@ export const config: UserConfig = {
     logo: '/favicon.ico',
     nav,
     sidebar,
-    socialLinks: [{ icon: 'github', link: 'https://github.com/Yuuki-Yuuna/luna-view' }]
+    socialLinks: [{ icon: 'github', link: 'https://github.com/Yuuki-Yuuna/luna-view' }],
+    outline: 'deep',
+    outlineTitle: '目录'
   },
   markdown: {
     config: mdPlugin

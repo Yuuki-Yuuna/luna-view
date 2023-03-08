@@ -1,0 +1,11 @@
+{
+  "extends": "./tsconfig.web.json",
+  "compilerOptions": {
+    "paths": {
+      "luna-view": ["packages/luna-view"]
+    },
+    "allowJs": true,
+    "lib": ["ESNext", "DOM", "DOM.Iterable"]
+  },
+  "include": ["packages", "play/**/*"]
+}

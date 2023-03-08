@@ -15,6 +15,18 @@ $space-gap: (
     flex-direction: column;
   }
 
+  @include m(center) {
+    align-items: center;
+  }
+
+  @include m(start) {
+    align-items: flex-start;
+  }
+
+  @include m(end) {
+    align-items: flex-end;
+  }
+
   @each $size in (small, large) {
     @include m($size) {
       gap: map-get($space-gap, $size);

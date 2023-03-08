@@ -1,5 +1,25 @@
-import { LuButton } from '@luna-view/components'
+import {
+  LuButton,
+  LuCollapseTransition,
+  LuDivider,
+  LuDropdown,
+  LuDropdownItem,
+  LuDropdownMenu,
+  LuPopover,
+  LuScrollbar,
+  LuSpace,
+  LuTooltip
+} from '@luna-view/components'
 
-import type { Plugin } from 'vue'
-
-export default [LuButton] as Plugin[]
+export default [
+  LuButton,
+  LuCollapseTransition,
+  LuDivider,
+  LuDropdown,
+  LuDropdownItem,
+  LuDropdownMenu,
+  LuPopover,
+  LuScrollbar,
+  LuSpace,
+  LuTooltip
+]

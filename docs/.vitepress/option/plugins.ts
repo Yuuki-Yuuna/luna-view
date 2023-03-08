@@ -3,6 +3,7 @@ import path from 'path'
 import MarkdownIt from 'markdown-it'
 import mdContainer from 'markdown-it-container'
 import { docRoot } from '@luna-view/build-config'
+import tableWrapper from '../plugins/table-wrapper'
 import { wrap, highlight } from '../utils/highlight'
 
 import type Token from 'markdown-it/lib/token'
@@ -18,7 +19,7 @@ const localMd = MarkdownIt()
 
 export const mdPlugin = (md: MarkdownIt) => {
   // md.use(externalLinkIcon)
-  // md.use(tableWrapper)
+  md.use(tableWrapper)
   // md.use(tooltip)
   md.use(mdContainer, 'demo', {
     validate(params) {
