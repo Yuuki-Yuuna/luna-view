@@ -1,0 +1,127 @@
+@use 'sass:map';
+@use 'mixins/mixins' as *;
+
+$radio: (
+  'font-size': getCssVar('font-size', 'medium'),
+  'text-color': getCssVar('text-color', 'regular'),
+  'font-weight': getCssVar('font-weight', 'primary'),
+  'input-bg-color': getCssVar('fill-color'),
+  'text-color-checked': getCssVar('color-primary', 'first'),
+  'color-checked': getCssVar('color-primary', 'first'),
+  'input-border-radius': getCssVar('border-radius', 'circle'),
+  'input-border-color': getCssVar('border-color'),
+  'input-border-color-hover': getCssVar('color-primary', 'first'),
+  'input-width': 14px,
+  'input-height': 14px
+);
+
+$radio-height: (
+  'large': 40px,
+  'default': 32px,
+  'small': 24px
+);
+
+@include b(radio) {
+  @include set-component-css-var('radio', $radio);
+}
+
+@include b(radio) {
+  color: getCssVar('radio', 'text-color');
+  font-weight: getCssVar('radio', 'font-weight');
+  position: relative;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  white-space: nowrap;
+  outline: none;
+  font-size: getCssVar('radio', 'font-size');
+  user-select: none;
+  margin-right: 32px;
+  height: map.get($radio-height, 'default');
+
+  @each $size in (large, small) {
+    &.#{$namespace}-radio--#{$size} {
+      height: map.get($radio-height, $size);
+
+      @include e(label) {
+        @include css-var-from-global(('radio', 'font-size'), ('font-size', $size));
+      }
+    }
+  }
+
+  &:last-child {
+    margin-right: 0;
+  }
+
+  @include e(input) {
+    white-space: nowrap;
+    cursor: pointer;
+    outline: none;
+    display: inline-flex;
+    position: relative;
+    vertical-align: middle;
+  }
+
+  @include e(label) {
+    font-size: getCssVar('radio', 'font-size');
+    padding-left: 4px;
+  }
+
+  //radio选框样式
+  @include e(inner) {
+    border: 1px solid;
+    border-radius: getCssVar('radio', 'input-border-radius');
+    width: getCssVar('radio', 'input-width');
+    height: getCssVar('radio', 'input-height');
+    background-color: getCssVar('radio', 'input-bg-color');
+    position: relative;
+    cursor: pointer;
+    display: inline-block;
+    box-sizing: border-box;
+
+    &:hover {
+      border-color: getCssVar('radio', 'input-border-color-hover');
+    }
+
+    &::after {
+      width: 4px;
+      height: 4px;
+      border-radius: getCssVar('radio', 'input-border-radius');
+      background-color: getCssVar('radio', 'input-bg-color');
+      content: '';
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%) scale(0);
+      transition: transform 0.15s ease-in;
+    }
+  }
+
+  // 原生radio
+  @include e(original) {
+    opacity: 0;
+    outline: none;
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: 0;
+  }
+
+  @include when(checked) {
+    .#{$namespace}-radio__inner {
+      border-color: getCssVar('radio', 'color-checked');
+      background: getCssVar('radio', 'color-checked');
+
+      &::after {
+        transform: translate(-50%, -50%) scale(1);
+      }
+    }
+
+    & .#{$namespace}-radio__label {
+      color: getCssVar('radio', 'text-color', 'checked');
+    }
+  }
+}

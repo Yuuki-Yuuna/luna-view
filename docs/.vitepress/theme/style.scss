@@ -64,9 +64,17 @@ div.vp-table {
       white-space: pre-wrap;
     }
 
-    thead tr,
-    thead tr:first-child th {
+    tr {
+      background-color: var(--lu-bg-color);
       border-top: none;
+
+      &:first-child th {
+        border-top: none;
+      }
+
+      &:nth-child(2n) {
+        background-color: var(--lu-bg-color);
+      }
     }
   }
 }

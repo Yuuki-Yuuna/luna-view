@@ -1,6 +1,6 @@
 <template>
   <button
-    ref="_ref"
+    ref="buttonRef"
     :class="[
       ns.b(),
       ns.m(size),
@@ -20,9 +20,9 @@
 </template>
 
 <script setup lang="ts">
+import { ref } from 'vue'
 import { useNamespace } from '@luna-view/hooks'
 import { buttonEmits, buttonProps } from './button'
-import { useButton } from './use-button'
 
 defineOptions({
   name: 'LuButton'
@@ -31,10 +31,15 @@ defineOptions({
 const props = defineProps(buttonProps)
 const emit = defineEmits(buttonEmits)
 
-const { _ref, handleClick } = useButton(props, emit)
 const ns = useNamespace('button')
 
+const buttonRef = ref<HTMLButtonElement>()
+
+const handleClick = (evt: MouseEvent) => {
+  emit('click', evt)
+}
+
 defineExpose({
-  ref: _ref
+  buttonRef
 })
 </script>
