@@ -32,7 +32,8 @@ provide(
   radioGroupKey,
   //注意类型标注是普通对象，不是ref对象
   reactive({
-    ...toRefs(props)
+    ...toRefs(props),
+    changeEvent
   })
 )
 </script>

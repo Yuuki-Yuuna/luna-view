@@ -1,15 +1,27 @@
 <template>
   <LuButton round plain>按钮</LuButton>
   <div :style="{ display: 'flex', justifyContent: 'center', marginTop: '150px' }">
-    <LuRadio v-model="show" :label="true">radio 1</LuRadio>
+    <LuRadioGroup v-model="groupValue" @change="onChange" disabled>
+      <LuRadio label="1">radio 1</LuRadio>
+      <LuRadio>radio 2</LuRadio>
+      <LuRadio label="3" @change="test">radio 3</LuRadio>
+    </LuRadioGroup>
   </div>
 </template>
 
 <script setup lang="ts">
 import { ref } from 'vue'
-import { LuButton, LuRadio } from '@luna-view/components'
+import { LuButton, LuRadio, LuRadioGroup } from '@luna-view/components'
 
-const show = ref(false)
+const groupValue = ref('1')
+
+const onChange = (val: any) => {
+  console.log(val)
+}
+
+const test = (val: any) => {
+  console.log('test', val)
+}
 </script>
 
 <style lang="scss">

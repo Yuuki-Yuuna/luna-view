@@ -2,13 +2,17 @@
   <label
     :class="[
       ns.b(),
-      ns.is('disabled', disabled),
+      ns.is('disabled', disabled || radioGroup?.disabled),
       ns.is('checked', modelValue === label),
-      ns.m(size)
+      ns.m(size || radioGroup?.size)
     ]"
   >
     <span
-      :class="[ns.e('input'), ns.is('disabled', disabled), ns.is('checked', modelValue === label)]"
+      :class="[
+        ns.e('input'),
+        ns.is('disabled', disabled || radioGroup?.disabled),
+        ns.is('checked', modelValue === label)
+      ]"
     >
       <input
         ref="radioRef"
@@ -57,7 +61,6 @@ const modelValue = computed({
     } else {
       emit('update:modelValue', val) //这一步修改props.modelValue
     }
-    emit('change', val)
     radioRef.value!.checked = radioGroup
       ? radioGroup.modelValue === props.label
       : props.modelValue === props.label

@@ -7,10 +7,13 @@ $radio: (
   'font-weight': getCssVar('font-weight', 'primary'),
   'input-bg-color': getCssVar('fill-color'),
   'text-color-checked': getCssVar('color-primary', 'first'),
+  'text-color-disabled': getCssVar('text-color', 'placeholder'),
   'color-checked': getCssVar('color-primary', 'first'),
+  'color-disabled': getCssVar('fill-color'),
   'input-border-radius': getCssVar('border-radius', 'circle'),
   'input-border-color': getCssVar('border-color'),
   'input-border-color-hover': getCssVar('color-primary', 'first'),
+  'input-border-color-disabled': getCssVar('border-color'),
   'input-width': 14px,
   'input-height': 14px
 );
@@ -80,7 +83,7 @@ $radio-height: (
     box-sizing: border-box;
 
     &:hover {
-      border-color: getCssVar('radio', 'input-border-color-hover');
+      border-color: getCssVar('radio', 'input-border-color', 'hover');
     }
 
     &::after {
@@ -122,6 +125,37 @@ $radio-height: (
 
     & .#{$namespace}-radio__label {
       color: getCssVar('radio', 'text-color', 'checked');
+    }
+  }
+
+  @include when(disabled) {
+    .#{$namespace}-radio__inner {
+      background-color: getCssVar('radio', 'color', 'disabled');
+      border-color: getCssVar('radio', 'input-border-color', 'disabled');
+      cursor: not-allowed;
+
+      &::after {
+        background-color: getCssVar('radio', 'color', 'disabled');
+        cursor: not-allowed;
+      }
+
+      & + .#{$namespace}-radio__label {
+        cursor: not-allowed;
+      }
+    }
+    &.is-checked {
+      .#{$namespace}-radio__inner {
+        background-color: getCssVar('radio', 'color', 'disabled');
+        border-color: getCssVar('radio', 'input-border-color', 'disabled');
+
+        &::after {
+          background-color: getCssVar('radio', 'color', 'disabled');
+        }
+      }
+    }
+    & span.#{$namespace}-radio__label {
+      color: getCssVar('radio', 'text-color', 'disabled');
+      cursor: not-allowed;
     }
   }
 }
