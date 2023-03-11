@@ -34,13 +34,45 @@ space/control-size
 
 :::
 
+## 自定义间距大小
+
+可以通过传入自己定义 `number` 类型的大小来设置, 也可以传入一个 `[number, number]` 类型详细指定竖直和水平方向
+
+::: demo
+
+space/customized-size
+
+:::
+
+## 自动换行
+
+水平(horizontal)模式下，通过 `wrap` 属性控制换行
+
+::: demo
+
+space/auto-wrap
+
+:::
+
+## 对齐方式
+
+设置该值可以调整所有子节点在容器内的对齐方式，通过 [align-items](https://developer.mozilla.org/zh-CN/docs/Web/CSS/align-items) 实现
+
+使用 `alignment` 属性进行对齐
+
+::: demo
+
+space/alignment
+
+:::
+
 ## Space API
 
 ### Attributes
 
 | 属性名    | 说明                 | 类型                                                                    | 默认值     |
 | --------- | -------------------- | ----------------------------------------------------------------------- | ---------- |
-| algin     | 对齐方式             | `'start'` \| `'center'` \| `'end'`                                      | center     |
+| alignment | 对齐方式             | `'start'` \| `'center'` \| `'end'`                                      | center     |
 | direction | 间距方向             | `'vertical'` \| `'horizontal'`                                          | horizontal |
 | gap       | 间距大小             | `'small'` \| `'default'` \| `'large'` \| `number` \| `[number, number]` | -          |
 | wrap      | 水平模式是否自动换行 | `boolean`                                                               | false      |

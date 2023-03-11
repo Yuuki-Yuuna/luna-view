@@ -6,8 +6,6 @@ import type { Placement } from '@popperjs/core'
 import type Slider from './slider.vue'
 
 export interface SliderDataState {
-  // percentValue: number
-  // oldPercentValue: number
   dragging: boolean
   sliderSize: number
 }

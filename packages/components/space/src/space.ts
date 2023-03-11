@@ -7,7 +7,7 @@ type Algin = 'start' | 'center' | 'end'
 type Size = 'small' | 'default' | 'large' | number | [number, number]
 
 export const spaceProps = buildProps({
-  algin: {
+  alignment: {
     type: definePropType<Algin>(String),
     default: 'center'
   },

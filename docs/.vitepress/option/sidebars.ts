@@ -29,6 +29,10 @@ const componentSidebar = [
       {
         text: 'Radio 单选框',
         link: '/component/radio'
+      },
+      {
+        text: 'Slider 滑块',
+        link: '/component/slider'
       }
     ]
   }

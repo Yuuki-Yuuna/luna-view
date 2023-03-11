@@ -19,7 +19,7 @@ defineOptions({
 const props = defineProps(spaceProps)
 
 const spaceClass = computed(() => {
-  const className = [ns.b(), ns.m(props.direction), ns.m(props.algin)]
+  const className = [ns.b(), ns.m(props.direction), ns.m(props.alignment)]
   if (isString(props.gap)) {
     className.push(ns.m(props.gap))
   }
@@ -29,6 +29,7 @@ const spaceClass = computed(() => {
 const spaceStyle = computed<CSSProperties>(() => {
   const style: CSSProperties = {}
   if (!isString(props.gap)) {
+    // 第一位竖直，第二位水平
     style.gap = isNumber(props.gap)
       ? (style.gap = props.gap + 'px')
       : props.gap
