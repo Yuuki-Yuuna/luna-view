@@ -22,6 +22,15 @@ const componentSidebar = [
         link: '/component/space'
       }
     ]
+  },
+  {
+    text: '表单组件',
+    items: [
+      {
+        text: 'Radio 单选框',
+        link: '/component/radio'
+      }
+    ]
   }
 ]
 

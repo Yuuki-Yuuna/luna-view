@@ -6,7 +6,7 @@
 
 <script setup lang="ts">
 import { computed } from 'vue'
-import { isString } from '@vueuse/core'
+import { isNumber, isString } from '@vueuse/core'
 import { useNamespace } from '@luna-view/hooks'
 import { spaceProps } from './space'
 
@@ -29,10 +29,12 @@ const spaceClass = computed(() => {
 const spaceStyle = computed<CSSProperties>(() => {
   const style: CSSProperties = {}
   if (!isString(props.gap)) {
-    style.gap = props.gap
-      .map((item) => item + 'px')
-      .toString()
-      .replace(',', ' ')
+    style.gap = isNumber(props.gap)
+      ? (style.gap = props.gap + 'px')
+      : props.gap
+          .map((item) => item + 'px')
+          .toString()
+          .replace(',', ' ')
   }
   style.flexWrap = props.wrap ? 'wrap' : 'nowrap'
   return style

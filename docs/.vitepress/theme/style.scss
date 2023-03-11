@@ -11,6 +11,17 @@
 //   /* --vp-sidebar-bg-color: var(--lu-bg-color-dark) */
 // }
 
+.VPLink.VPNavBarMenuLink {
+  font-size: 16px;
+  line-height: 60px;
+
+  &.active {
+    border-bottom: 2px solid var(--lu-color-primary-first);
+  }
+}
+
+
+
 .VPImage.image-src {
   max-width: 342px;
   max-height: 192px;

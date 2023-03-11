@@ -21,17 +21,17 @@ export const radioProps = buildProps({
     default: false
   },
   name: {
-    type: String,
-    default: ''
+    type: String
   }
 } as const)
 export type RadioProps = ExtractPropTypes<typeof radioProps>
 
+const isValideValue = (val: string | number | boolean) =>
+  isString(val) || isNumber(val) || isBoolean(val)
 export const radioEmits = {
   //组件使用v-model需要触发emit https://cn.vuejs.org/guide/components/v-model.html
-  'update:modelValue': (val: string | number | boolean) =>
-    isString(val) || isNumber(val) || isBoolean(val),
-  change: (val: string | number | boolean) => isString(val) || isNumber(val) || isBoolean(val)
+  'update:modelValue': isValideValue,
+  change: isValideValue
 }
 export type RadioEmits = typeof radioEmits
 

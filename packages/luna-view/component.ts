@@ -6,7 +6,10 @@ import {
   LuDropdownItem,
   LuDropdownMenu,
   LuPopover,
+  LuRadio,
+  LuRadioGroup,
   LuScrollbar,
+  LuSlider,
   LuSpace,
   LuTooltip
 } from '@luna-view/components'
@@ -21,5 +24,8 @@ export default [
   LuPopover,
   LuScrollbar,
   LuSpace,
-  LuTooltip
+  LuTooltip,
+  LuRadio,
+  LuRadioGroup,
+  LuSlider
 ]

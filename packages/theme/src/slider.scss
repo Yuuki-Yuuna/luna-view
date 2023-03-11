@@ -1,0 +1,152 @@
+@use 'sass:map';
+@use 'mixins/mixins.scss' as *;
+
+$slider: (
+  'main-bg-color': getCssVar('color-primary', 'first'),
+  'runway-bg-color': getCssVar('border-color', 'lighter'),
+  'disabled-color': getCssVar('text-color', 'disabled'),
+  'border-radius': 3px,
+  'height': 6px,
+  // 'button-size': 20px,
+  'button-wrapper-size': 36px,
+  'button-wrapper-offset': -15px
+);
+
+$slider-button-size: (
+  'small': 12px,
+  'default': 16px,
+  'large': 20px
+);
+
+@include b(slider) {
+  @include set-component-css-var('slider', $slider);
+}
+
+@include b(slider) {
+  width: 100%;
+  height: 28px;
+  display: flex;
+  align-items: center;
+
+  @include e(runway) {
+    flex: 1;
+    height: getCssVar('slider', 'height');
+    background-color: getCssVar('slider', 'runway-bg-color');
+    border-radius: getCssVar('slider', 'border-radius');
+    position: relative;
+    cursor: pointer;
+
+    &.is-disabled {
+      cursor: default;
+
+      .#{$namespace}-slider__bar {
+        background-color: getCssVar('slider', 'disabled-color');
+      }
+
+      .#{$namespace}-slider__button {
+        border-color: getCssVar('slider', 'disabled-color');
+
+        &:hover,
+        &.dragging {
+          transform: scale(1);
+          cursor: not-allowed;
+        }
+      }
+
+      .#{$namespace}-slider__button-wrapper {
+        &:hover,
+        &.dragging {
+          cursor: not-allowed;
+        }
+      }
+    }
+  }
+
+  @include e(bar) {
+    height: getCssVar('slider', 'height');
+    background-color: getCssVar('slider', 'main-bg-color');
+    border-top-left-radius: getCssVar('slider', 'border-radius');
+    border-bottom-left-radius: getCssVar('slider', 'border-radius');
+    position: absolute;
+  }
+
+  @include e(button-wrapper) {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: getCssVar('slider', 'button-wrapper-size');
+    width: getCssVar('slider', 'button-wrapper-size');
+    position: absolute;
+    z-index: 1;
+    top: getCssVar('slider', 'button-wrapper-offset');
+    transform: translateX(-50%);
+    background-color: transparent;
+    user-select: none;
+    outline: none;
+
+    &:hover {
+      cursor: grab;
+    }
+
+    &.dragging {
+      cursor: grabbing;
+    }
+  }
+
+  @include e(button) {
+    // width: getCssVar('slider', 'button-size');
+    // height: getCssVar('slider', 'button-size');
+    width: map-get($slider-button-size, 'default');
+    height: map-get($slider-button-size, 'default');
+    border: solid 2px getCssVar('slider', 'main-bg-color');
+    background-color: getCssVar('fill-color');
+    border-radius: 50%;
+    box-sizing: border-box;
+    transition: 0.2s;
+    user-select: none;
+
+    &:hover,
+    &.dragging {
+      transform: scale(1.2);
+    }
+
+    &:hover {
+      cursor: grab;
+    }
+
+    &.dragging {
+      cursor: grabbing;
+    }
+
+    @each $size in (small, large) {
+      @include m($size) {
+        width: map-get($slider-button-size, $size);
+        height: map-get($slider-button-size, $size);
+      }
+    }
+  }
+
+  @include when(vertical) {
+    position: relative;
+    display: inline-flex;
+    width: auto;
+    height: 100%;
+    flex: 0;
+
+    .#{$namespace}-slider__runway {
+      width: getCssVar('slider', 'height');
+      height: 100%;
+      margin: 0 16px;
+    }
+    .#{$namespace}-slider__bar {
+      width: getCssVar('slider', 'height');
+      height: auto;
+      border-radius: 0 0 3px 3px;
+    }
+    .#{$namespace}-slider__button-wrapper {
+      top: auto;
+      left: getCssVar('slider', 'button-wrapper-offset');
+      transform: translateY(50%);
+    }
+  }
+}

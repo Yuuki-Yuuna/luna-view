@@ -8,7 +8,7 @@ $space-gap: (
 
 @include b(space) {
   display: inline-flex;
-  gap: 8px;
+  gap: 10px;
   box-sizing: border-box;
 
   @include m(vertical) {

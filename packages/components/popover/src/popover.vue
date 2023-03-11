@@ -34,7 +34,7 @@
 
 <script setup lang="ts">
 import { computed, ref, unref } from 'vue'
-import { LuTooltip } from '@luna-view/components'
+import { LuTooltip } from '@luna-view/components/tooltip'
 import { useNamespace } from '@luna-view/hooks'
 import { popoverEmits, popoverProps } from './popover'
 

@@ -40,7 +40,8 @@
 
 <script setup lang="ts">
 import { provide, ref, toRef } from 'vue'
-import { LuScrollbar, LuTooltip } from '@luna-view/components'
+import { LuScrollbar } from '@luna-view/components/scrollbar'
+import { LuTooltip } from '@luna-view/components/tooltip'
 import { useNamespace } from '@luna-view/hooks'
 import { dropdownEmits, dropdownProps } from './dropdown'
 import { DROPDOWN_INJECTION_KEY } from './tokens'

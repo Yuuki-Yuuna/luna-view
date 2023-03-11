@@ -4,7 +4,7 @@ import type { ExtractPropTypes } from 'vue'
 import type Space from './space.vue'
 
 type Algin = 'start' | 'center' | 'end'
-type Size = 'small' | 'middle' | 'large' | [number, number]
+type Size = 'small' | 'default' | 'large' | number | [number, number]
 
 export const spaceProps = buildProps({
   algin: {
@@ -17,7 +17,7 @@ export const spaceProps = buildProps({
   },
   gap: {
     type: definePropType<Size>([String, Array]),
-    default: 'middle'
+    default: 'default'
   },
   wrap: {
     type: Boolean,

@@ -48,16 +48,13 @@ const contentRef = ref<InstanceType<typeof LuTooltipContent>>()
 
 const open = ref(false)
 
-const controlled = computed(() => (isBoolean(props.openStatus) ? props.openStatus : unref(open)))
-
-watch(
-  () => props.disabled,
-  (disabled) => {
-    if (disabled && open.value) {
-      open.value = false
-    }
+const controlled = computed(() => {
+  if (props.disabled) {
+    return false
+  } else {
+    return isBoolean(props.openStatus) ? props.openStatus : unref(open)
   }
-)
+})
 
 const { onOpen, onClose } = useDelayedToggle({
   showAfter: toRef(props, 'showAfter'),

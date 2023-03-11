@@ -2,17 +2,13 @@
   <label
     :class="[
       ns.b(),
-      ns.is('disabled', disabled || radioGroup?.disabled),
+      ns.is('disabled', disabled),
       ns.is('checked', modelValue === label),
       ns.m(size || radioGroup?.size)
     ]"
   >
     <span
-      :class="[
-        ns.e('input'),
-        ns.is('disabled', disabled || radioGroup?.disabled),
-        ns.is('checked', modelValue === label)
-      ]"
+      :class="[ns.e('input'), ns.is('disabled', disabled), ns.is('checked', modelValue === label)]"
     >
       <input
         ref="radioRef"
@@ -21,7 +17,7 @@
         :value="label"
         type="radio"
         :name="name || radioGroup?.name"
-        :disabled="disabled || radioGroup?.disabled"
+        :disabled="disabled"
         @change="handleChange"
       />
       <span :class="ns.e('inner')"></span>
@@ -67,7 +63,13 @@ const modelValue = computed({
   }
 })
 
+const disabled = computed(() => radioGroup?.disabled || props.disabled) //undefined那个必须写在前面,了解||的原理
+
 const handleChange = () => {
   nextTick(() => emit('change', modelValue.value))
 }
+
+defineExpose({
+  radioRef
+})
 </script>

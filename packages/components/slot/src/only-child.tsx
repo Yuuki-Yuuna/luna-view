@@ -6,14 +6,17 @@ import type { VNode } from 'vue'
 export const OnlyChild = defineComponent({
   name: 'LuOnlyChild',
   setup(props, { slots, attrs }) {
-    const defaultSlot = slots.default?.(attrs)
-    const firstLegalNode = findFirstLegalChild(defaultSlot)
     const forwardRefInjection = inject(FORWARD_REF_INJECTION_KEY)
     const forwardRefDirective = useForwardRefDirective(
       forwardRefInjection?.setForwardRef ?? (() => {})
     )
+    return () => {
+      // 这几个代码注意写在渲染函数里面, 不然不进行响应式更新
+      const defaultSlot = slots.default?.(attrs)
+      const firstLegalNode = findFirstLegalChild(defaultSlot)
 
-    return () => (firstLegalNode ? withDirectives(firstLegalNode, [[forwardRefDirective]]) : null)
+      return firstLegalNode ? withDirectives(firstLegalNode, [[forwardRefDirective]]) : null
+    }
   }
 })
 

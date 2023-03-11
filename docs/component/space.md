@@ -22,13 +22,25 @@ space/vertical
 
 :::
 
+## 控制间距大小
+
+通过调整 `gap` 的值来控制间距的大小
+
+你可以使用内置的 `small` 、`default` 、`large` 来设置间距大小，分别对应 `6px` 、`10px` 和 `14px` 的间距
+
+::: demo
+
+space/control-size
+
+:::
+
 ## Space API
 
 ### Attributes
 
-| 属性名    | 说明                 | 类型                                                       | 默认值     |
-| --------- | -------------------- | ---------------------------------------------------------- | ---------- |
-| algin     | 对齐方式             | `'start'` \| `'center'` \| `'end'`                         | center     |
-| direction | 间距方向             | `'vertical'` \| `'horizontal'`                             | horizontal |
-| gap       | 间距大小             | `'small'` \| `'middle'` \| `'large'` \| `[number, number]` | -          |
-| wrap      | 水平模式是否自动换行 | `boolean`                                                  | false      |
+| 属性名    | 说明                 | 类型                                                                    | 默认值     |
+| --------- | -------------------- | ----------------------------------------------------------------------- | ---------- |
+| algin     | 对齐方式             | `'start'` \| `'center'` \| `'end'`                                      | center     |
+| direction | 间距方向             | `'vertical'` \| `'horizontal'`                                          | horizontal |
+| gap       | 间距大小             | `'small'` \| `'default'` \| `'large'` \| `number` \| `[number, number]` | -          |
+| wrap      | 水平模式是否自动换行 | `boolean`                                                               | false      |
