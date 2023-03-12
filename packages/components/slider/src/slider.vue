@@ -70,9 +70,7 @@ const modelValue = computed({
 const barPercentage = computed(
   () => ((modelValue.value - min.value) / (max.value - min.value)) * 100 + '%'
 )
-const runwayStyle = computed<CSSProperties>(() =>
-  props.vertical ? { height: props.height + 'px' } : {}
-)
+const runwayStyle = computed<CSSProperties>(() => (props.vertical ? { height: props.height } : {}))
 const barStyle = computed<CSSProperties>(() => {
   const style: CSSProperties = props.vertical
     ? { height: barPercentage.value, bottom: 0 }

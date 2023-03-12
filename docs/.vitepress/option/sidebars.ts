@@ -35,6 +35,15 @@ const componentSidebar = [
         link: '/component/slider'
       }
     ]
+  },
+  {
+    text: '反馈组件',
+    items: [
+      {
+        text: 'Tooltip 文字提示',
+        link: '/component/tooltip'
+      }
+    ]
   }
 ]
 

@@ -20,7 +20,7 @@
 
 <script setup lang="ts">
 import { computed, nextTick, onMounted, onUpdated, provide, ref, toRef, unref, watch } from 'vue'
-import { useEventListener, useResizeObserver } from '@vueuse/core'
+import { isNumber, useEventListener, useResizeObserver } from '@vueuse/core'
 import { useNamespace } from '@luna-view/hooks'
 import LuBar from './bar.vue'
 import { scrollbarEmits, scrollbarProps } from './scrollbar'
@@ -61,10 +61,10 @@ const resizeClassName = computed(() => [ns.e('view'), props.viewClass])
 const style = computed(() => {
   const style: CSSProperties = {}
   if (props.height) {
-    style.height = props.height + 'px'
+    style.height = isNumber(props.height) ? props.height + 'px' : props.height
   }
   if (props.maxHeight) {
-    style.maxHeight = props.maxHeight + 'px'
+    style.maxHeight = isNumber(props.maxHeight) ? props.maxHeight + 'px' : props.maxHeight
   }
   return [props.wrapStyle, style]
 })

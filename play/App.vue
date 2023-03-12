@@ -1,20 +1,16 @@
 <template>
   <LuButton round plain>按钮</LuButton>
   <div :style="{ display: 'flex', justifyContent: 'center', marginTop: '150px' }">
-    <div class="test">
-      <!-- <LuSlider v-model="slider" /> -->
-      <LuSpace :gap="[10, 12]">
-        <LuButton>Button 1</LuButton>
-        <LuButton>Button 2</LuButton>
-        <LuButton>Button 3</LuButton>
-      </LuSpace>
-    </div>
+    <LuTooltip effect="dark">
+      <LuButton>按钮</LuButton>
+      <template #content>我是下拉</template>
+    </LuTooltip>
   </div>
 </template>
 
 <script setup lang="ts">
 import { ref } from 'vue'
-import { LuButton, LuSlider, LuSpace } from '@luna-view/components'
+import { LuButton, LuTooltip } from '@luna-view/components'
 
 const slider = ref(0)
 </script>

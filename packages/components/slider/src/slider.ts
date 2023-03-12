@@ -41,7 +41,7 @@ export const sliderProps = buildProps({
     default: false
   },
   height: {
-    type: Number
+    type: String
   },
   showTooltip: {
     type: Boolean,

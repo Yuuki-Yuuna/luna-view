@@ -35,6 +35,9 @@ const addEventHandler = (type: TooltipTriggerType, handler: (e: Event) => void) 
     if (props.disabled || props.trigger != type) {
       return
     }
+    if (type == 'contextmenu') {
+      e.preventDefault()
+    }
     handler(e)
   }
 
