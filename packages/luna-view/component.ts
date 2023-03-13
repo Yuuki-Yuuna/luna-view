@@ -14,6 +14,8 @@ import {
   LuTooltip
 } from '@luna-view/components'
 
+import type { Plugin } from '@vue/runtime-core' //不加type打包报错, 主页不能从vue引入，类型不一致
+
 export default [
   LuButton,
   LuCollapseTransition,
@@ -28,4 +30,4 @@ export default [
   LuRadio,
   LuRadioGroup,
   LuSlider
-]
+] as Plugin[]

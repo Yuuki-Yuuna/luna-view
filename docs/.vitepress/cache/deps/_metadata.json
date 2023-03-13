@@ -1,29 +1,38 @@
 {
-  "hash": "35367b2c",
-  "browserHash": "deb502e9",
+  "hash": "7979e7f7",
+  "browserHash": "70399933",
   "optimized": {
     "vue": {
       "src": "../../../../node_modules/.pnpm/registry.npmmirror.com+vue@3.2.36/node_modules/vue/dist/vue.runtime.esm-bundler.js",
       "file": "vue.js",
-      "fileHash": "95d90722",
+      "fileHash": "65e239c9",
       "needsInterop": false
     },
     "@vueuse/core": {
       "src": "../../../../node_modules/.pnpm/registry.npmmirror.com+@vueuse+core@9.13.0/node_modules/@vueuse/core/index.mjs",
       "file": "@vueuse_core.js",
-      "fileHash": "27ed14e4",
+      "fileHash": "a8d4e6ac",
       "needsInterop": false
     },
     "@popperjs/core": {
       "src": "../../../../node_modules/.pnpm/registry.npmmirror.com+@popperjs+core@2.11.6/node_modules/@popperjs/core/lib/index.js",
       "file": "@popperjs_core.js",
-      "fileHash": "85846003",
+      "fileHash": "3a54f6bc",
       "needsInterop": false
+    },
+    "nprogress": {
+      "src": "../../../../node_modules/.pnpm/registry.npmmirror.com+nprogress@0.2.0/node_modules/nprogress/nprogress.js",
+      "file": "nprogress.js",
+      "fileHash": "a644cf6f",
+      "needsInterop": true
     }
   },
   "chunks": {
     "chunk-4HZL7SK5": {
       "file": "chunk-4HZL7SK5.js"
+    },
+    "chunk-RSJERJUL": {
+      "file": "chunk-RSJERJUL.js"
     }
   }
 }

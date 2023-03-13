@@ -20,6 +20,14 @@ const componentSidebar = [
       {
         text: 'Space 间距',
         link: '/component/space'
+      },
+      {
+        text: 'Divider 分割线',
+        link: '/component/divider'
+      },
+      {
+        text: 'Scrollbar 滚动条',
+        link: '/component/scrollbar'
       }
     ]
   },
@@ -37,8 +45,21 @@ const componentSidebar = [
     ]
   },
   {
+    text: 'Navigation 导航组件',
+    items: [
+      {
+        text: 'Dropdown 下拉菜单',
+        link: '/component/dropdown'
+      }
+    ]
+  },
+  {
     text: '反馈组件',
     items: [
+      {
+        text: 'Popover 气泡卡片',
+        link: '/component/popover'
+      },
       {
         text: 'Tooltip 文字提示',
         link: '/component/tooltip'

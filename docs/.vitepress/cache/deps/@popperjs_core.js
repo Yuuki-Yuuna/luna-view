@@ -1,3 +1,5 @@
+import "./chunk-RSJERJUL.js";
+
 // ../node_modules/.pnpm/registry.npmmirror.com+@popperjs+core@2.11.6/node_modules/@popperjs/core/lib/enums.js
 var top = "top";
 var bottom = "bottom";

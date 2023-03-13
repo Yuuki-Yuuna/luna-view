@@ -39,6 +39,9 @@ export const sliderButtonProps = buildProps({
   showButton: {
     type: Boolean,
     default: true
+  },
+  formatTooltip: {
+    type: definePropType<(val: number) => number | string>(Function)
   }
 } as const)
 export type SliderButtonProps = ExtractPropTypes<typeof sliderButtonProps>

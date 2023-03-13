@@ -5,7 +5,7 @@ import { useNamespace } from '@luna-view/hooks'
 import type { ExtractPropTypes } from 'vue'
 import type Dropdown from './dropdown.vue'
 
-export type DropdownSize = 'large' | 'small' | undefined
+export type DropdownSize = 'large' | 'small' | 'default'
 
 const ns = useNamespace('dropdown')
 

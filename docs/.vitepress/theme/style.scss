@@ -11,6 +11,16 @@
 //   /* --vp-sidebar-bg-color: var(--lu-bg-color-dark) */
 // }
 
+#nprogress {
+  .bar {
+    background: var(--lu-color-primary-first);
+  }
+  .spinner .spinner-icon {
+    border-top-color: var(--lu-color-primary-first);
+    border-left-color: var(--lu-color-primary-first);
+  }
+}
+
 .VPLink.VPNavBarMenuLink {
   font-size: 16px;
   line-height: 60px;
@@ -20,30 +30,38 @@
   }
 }
 
+// 主页大字和图
+.VPHomeHero {
+  .VPImage.image-src {
+    max-width: 342px;
+    max-height: 192px;
 
+    @media (min-width: 960px) {
+      max-width: 456px;
+      max-height: 256px;
+    }
 
-.VPImage.image-src {
-  max-width: 342px;
-  max-height: 192px;
-
-  @media (min-width: 960px) {
-    max-width: 456px;
-    max-height: 256px;
+    @media (min-width: 1080px) {
+      max-width: 534px;
+      max-height: 300px;
+    }
   }
 
-  @media (min-width: 1080px) {
-    max-width: 534px;
-    max-height: 300px;
+  .main .text {
+    @media (min-width: 960px) {
+      font-size: 50px;
+    }
+
+    @media (min-width: 1080px) {
+      font-size: 54px;
+    }
   }
 }
 
-.main .text {
-  @media (min-width: 960px) {
-    font-size: 50px;
-  }
-
-  @media (min-width: 1080px) {
-    font-size: 54px;
+// 右侧导航
+.root {
+  .outline-link.active {
+    color: var(--lu-color-primary-first);
   }
 }
 

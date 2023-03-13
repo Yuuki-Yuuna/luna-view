@@ -21,6 +21,7 @@
         :placement="placement"
         :show-button="showButton"
         :size="buttonSize"
+        :format-tooltip="formatTooltip"
       />
     </div>
   </div>

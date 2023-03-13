@@ -53,6 +53,9 @@ export const sliderProps = buildProps({
   placement: {
     type: definePropType<Placement>(String),
     default: 'top'
+  },
+  formatTooltip: {
+    type: definePropType<(val: number) => number | string>(Function)
   }
 } as const)
 export type SliderProps = ExtractPropTypes<typeof sliderProps>

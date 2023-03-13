@@ -22,7 +22,7 @@
         :style="buttonStyle"
       ></div>
       <template #content>
-        <span>{{ modelValue }}</span>
+        <span>{{ formatTooltip ? formatTooltip(modelValue) : modelValue }}</span>
       </template>
     </lu-tooltip>
   </div>

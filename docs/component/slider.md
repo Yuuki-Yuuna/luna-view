@@ -77,6 +77,7 @@ slider/button-size
 | show-tooltip          | 显示提示       | `boolean`                             | true   |
 | tooltip-class         | tooltip 的类名 | `string`                              | -      |
 | placement             | tooltip 的位置 | `Placement`                           | -      |
+| format-tooltip        | 格式化提示信息 | `(value: number) => number \| string` | -      |
 
 #### Placement
 

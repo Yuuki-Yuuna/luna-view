@@ -27,6 +27,9 @@ const ns = useNamespace('dropdown')
 const { hideOnClick, handleClick } = inject(DROPDOWN_INJECTION_KEY)!
 
 const onClick = (e: MouseEvent) => {
+  if (props.disabled) {
+    return
+  }
   if (hideOnClick.value) {
     handleClick()
   }

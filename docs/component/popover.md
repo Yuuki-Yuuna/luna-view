@@ -1,77 +1,37 @@
-# Tooltip 文字提示
+# Popover 气泡卡片
 
-简单的文字提示气泡框，使用 lu-popper 实现
+弹出气泡式的卡片浮层，同样使用 lu-popper 实现
 
 ## 基础用法
 
-使用 Tooltip 包裹需要提示的内容, 通过 content 插槽插入提示信息
+实际上就是个套壳 Tooltip，支持所有 lu-tooltip 的属性
+
+此外，新增了标题属性和宽度属性，插槽中放入的对象发生了变化
 
 ::: demo
 
-tooltip/basic
+popover/basic
 
 :::
 
-## 显示位置
+## 嵌套操作
 
-使用 `placement` 属性决定提示信息的位置， `placement` 属性值为：方向-对齐位置；四个方向：top、left、right、bottom；三种对齐位置：start, end，默认为空。 如 placement="left-end"，则提示信息出现在目标元素的左侧，且提示信息的底部与目标元素的底部对齐
+虽然 Tooltip 也支持嵌套，但使用 Popover 嵌套语义化更强，支持度也相对更好
 
 ::: demo
 
-tooltip/placement
+popover/nested-operation
 
 :::
 
-## 主题
-
-Tooltip 组件内置了两个主题：`dark` 和 `light`
-
-通过设置 `effect` 来修改主题，默认值为 `light`
-
-::: demo
-
-tooltip/effect
-
-:::
-
-## 箭头展示
-
-通过 `show-arrow` 属性决定是否展示箭头，默认为 `true`
-
-::: demo
-
-tooltip/show-arrow
-
-:::
-
-## 触发方式
-
-通过 `trigger` 属性设置触发方式，默认为 `hover`
-
-::: demo
-
-tooltip/trigger
-
-:::
-
-## 自定义触发
-
-支持 React 风格的触发方式，是否显示完全取决于 `open-status` 属性
-
-lu-tooltip 提供了 `before-show` 和 `before-hide` 事件，即使设置了 `open-status` 属性，这些事件仍会按照 `trigger` 指定的触发方式在 Tooltip 显示和隐藏前调用。 当然，你也可以在其他任何你想要显示和隐藏 Tooltip 时修改 `open-status`
-
-::: demo
-
-tooltip/customized-trigger
-
-:::
-
-## Tooltip API
+## Popover API
 
 ### Attributes
 
 | 属性名         | 说明                                  | 类型                                                   | 默认值               |
 | -------------- | ------------------------------------- | ------------------------------------------------------ | -------------------- |
+| title          | 标题                                  | string                                                 | -                    |
+| width          | 宽度                                  | `string` \| `number`                                   | 150                  |
 | trigger        | 触发方式                              | `'hover'` \| `'focus'` \| `'click'` \| `'contextmenu'` | hover                |
 | placement      | 显示位置                              | `Placement`                                            | bottom               |
 | effect         | tooltip 主题                          | `'light'` \| `'dark'`                                  | light                |

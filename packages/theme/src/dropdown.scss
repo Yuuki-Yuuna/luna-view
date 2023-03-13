@@ -96,7 +96,13 @@ $dropdown-item-padding: (
 
     @include when(disabled) {
       cursor: not-allowed;
-      color: getCssVar('text-colo', 'disabled');
+      color: getCssVar('text-color', 'placeholder');
+      opacity: 0.6;
+
+      &:hover {
+        color: getCssVar('text-color', 'placeholder');
+        background-color: getCssVar('bg-color')
+      }
     }
   }
 
