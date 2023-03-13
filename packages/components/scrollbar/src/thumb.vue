@@ -74,14 +74,14 @@ const clickTrackHandler = (e: MouseEvent) => {
   const offset =
     e[bar.value.client] - (e.target as HTMLElement).getBoundingClientRect()[bar.value.direction]
   const thumbHalf = thumbRef.value[bar.value.offset] / 2
+  // 通过ratio将视觉距离换算回实际距离得百分数
+  const thumbPositionPercentage =
+    ((offset - thumbHalf) * 100 * props.ratio) / instanceRef.value[bar.value.offset]
   if (smooth.value) {
     const opt: ScrollToOptions = { behavior: 'smooth' }
-    opt[bar.value.direction] = (offset - thumbHalf) * props.ratio
+    opt[bar.value.direction] = (thumbPositionPercentage * wrapRef.value[bar.value.scrollSize]) / 100
     wrapRef.value.scrollTo(opt)
   } else {
-    // 通过ratio将视觉距离换算回实际距离得百分数
-    const thumbPositionPercentage =
-      ((offset - thumbHalf) * 100 * props.ratio) / instanceRef.value[bar.value.offset]
     wrapRef.value[bar.value.scroll] =
       (thumbPositionPercentage * wrapRef.value[bar.value.scrollSize]) / 100
   }
