@@ -12,11 +12,20 @@ $colors: (
     'second': #545472,
     'third': #7a7996,
     'fourth': #a9a6ce
+  ),
+  'status': (
+    'primary': #6f62ea,
+    'success': #1a8d89,
+    'warning': #ecbe92,
+    'info': #988b88,
+    'error': #eeaca6,
+    'danger': #f56c6c, //danger偷的element的
   )
 );
 
 $primary-color: map-get($colors, 'primary');
 $active-color: map-get($colors, 'active');
+$status-color: map-get($colors, 'status');
 
 $text-color: (
   'primary': #41374d,

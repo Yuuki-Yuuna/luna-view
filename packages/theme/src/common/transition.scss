@@ -35,3 +35,14 @@ $transition-function-fast-bezier: cubic-bezier(0.23, 1, 0.32, 1);
 .#{$namespace}-collapse-transition-enter-active {
   transition: 0.3s max-height ease-in-out;
 }
+
+// 中间打开
+.#{$namespace}-zoom-in-center-enter-active,
+.#{$namespace}-zoom-in-center-leave-active {
+  transition: all 0.3s cubic-bezier(0.55, 0, 0.1, 1);
+}
+.#{$namespace}-zoom-in-center-enter-from,
+.#{$namespace}-zoom-in-center-leave-active {
+  opacity: 0;
+  transform: scaleX(0);
+}

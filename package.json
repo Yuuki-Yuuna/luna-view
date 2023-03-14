@@ -21,6 +21,7 @@
     "postinstall": "pnpm stub"
   },
   "dependencies": {
+    "@element-plus/icons-vue": "^2.1.0",
     "@luna-view/components": "workspace:*",
     "@luna-view/hooks": "workspace:^0.0.1",
     "@luna-view/theme": "workspace:^0.0.1",

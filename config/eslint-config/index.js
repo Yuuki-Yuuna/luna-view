@@ -129,6 +129,7 @@ module.exports = defineConfig({
 
     'vue/multi-word-component-names': 'off',
     'vue/prefer-import-from-vue': 'off', //这个要不得
+    'vue/no-v-html': 'off',
 
     'import/first': 'error',
     'import/no-duplicates': 'error',

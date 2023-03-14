@@ -9,6 +9,8 @@ export {}
 
 declare module '@vue/runtime-core' {
   export interface GlobalComponents {
+    CodeBlockIcon: typeof import('./.vitepress/vitepress/components/icon/code-block-icon.vue')['default']
+    CopyIcon: typeof import('./.vitepress/vitepress/components/icon/copy-icon.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
     VpApp: typeof import('./.vitepress/vitepress/components/vp-app.vue')['default']

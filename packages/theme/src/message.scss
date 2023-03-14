@@ -1,0 +1,113 @@
+@use 'sass:map';
+@use 'mixins/mixins.scss' as *;
+
+$message: (
+  'bg-color': getCssVar('bg-color'),
+  'border-color': getCssVar('border-color', 'lighter'),
+  'padding': 15px 19px,
+  'text-color': getCssVar('text-color', 'regular'),
+  'icon-color': getCssVar('color-status', 'info'),
+  'close-size': 16px,
+  'close-icon-color': getCssVar('text-color', 'regular'),
+  'close-hover-color': getCssVar('text-color', 'placeholder')
+);
+
+@include b(message) {
+  @include set-component-css-var('message', $message);
+}
+
+@include b(message) {
+  width: fit-content;
+  max-width: calc(100% - 32px);
+  box-sizing: border-box;
+  border: 1px solid;
+  border-radius: getCssVar('border-radius', 'base');
+  border-color: getCssVar('message', 'border-color');
+  position: fixed;
+  left: 50%;
+  top: 20px;
+  transform: translateX(-50%);
+  background-color: getCssVar('message', 'bg-color');
+  transition: opacity 0.3s, transform 0.4s, top 0.4s;
+  padding: getCssVar('message', 'padding');
+  display: flex;
+  align-items: center;
+  color: getCssVar('message' 'text-color');
+
+  p {
+    margin: 0;
+  }
+
+  @include e(icon) {
+    margin-right: 10px;
+  }
+
+  @include e(content) {
+    padding: 0;
+    font-size: 14px;
+    line-height: 1;
+
+    &:focus {
+      outline-width: 0;
+    }
+  }
+
+  @each $type in (success, info, warning, error) {
+    @include m($type) {
+      @include css-var-from-global(('message', 'icon-color'), ('color-status', $type));
+
+      .#{$namespace}-message__content {
+        @include when(color-changed) {
+          @include css-var-from-global(('message', 'text-color'), ('color-status', $type));
+        }
+
+        color: getCssVar('message', 'text-color');
+        overflow-wrap: anywhere;
+      }
+    }
+
+    & .#{$namespace}-message-icon--#{$type} {
+      color: getCssVar('message', 'icon-color');
+    }
+  }
+
+  .#{$namespace}-message__badge {
+    position: absolute;
+    top: -8px;
+    right: -8px;
+  }
+
+  @include when(center) {
+    justify-content: center;
+  }
+
+  @include when(closable) {
+    .#{$namespace}-message__content {
+      padding-right: 31px;
+    }
+  }
+
+  & .#{$namespace}-message__closeBtn {
+    position: absolute;
+    top: 50%;
+    right: 19px;
+    transform: translateY(-50%);
+    cursor: pointer;
+    color: getCssVar('message', 'close-icon-color');
+    font-size: getCssVar('message', 'close-size');
+
+    &:focus {
+      outline-width: 0;
+    }
+
+    &:hover {
+      color: getCssVar('message', 'close-hover-color');
+    }
+  }
+}
+
+.#{$namespace}-message-fade-enter-from,
+.#{$namespace}-message-fade-leave-to {
+  opacity: 0;
+  transform: translate(-50%, -100%);
+}

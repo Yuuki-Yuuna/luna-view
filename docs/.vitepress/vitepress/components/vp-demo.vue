@@ -6,22 +6,7 @@
     <div class="op-btns">
       <LuTooltip :show-arrow="false" effect="dark">
         <span class="icon" @click="copyCode">
-          <svg
-            t="1677984016262"
-            class="icon"
-            viewBox="0 0 1024 1024"
-            version="1.1"
-            xmlns="http://www.w3.org/2000/svg"
-            p-id="6262"
-            id="mx_n_1677984016263"
-            width="16"
-            height="16"
-          >
-            <path
-              d="M682.666667 42.666667H85.333333v682.666666h85.333334V128h512V42.666667zM256 213.333333l4.522667 768H896V213.333333H256z m554.666667 682.666667H341.333333V298.666667h469.333334v597.333333z"
-              p-id="6263"
-            ></path>
-          </svg>
+          <copy-icon />
         </span>
         <template #content>复制</template>
       </LuTooltip>
@@ -52,22 +37,7 @@
     <Transition name="el-fade-in-linear">
       <div v-show="sourceVisible" class="example-float-control" @click="sourceVisible = false">
         <span class="icon">
-          <svg
-            t="1677985145798"
-            class="icon"
-            viewBox="0 0 1024 1024"
-            version="1.1"
-            xmlns="http://www.w3.org/2000/svg"
-            p-id="3748"
-            id="mx_n_1677985145799"
-            width="20"
-            height="20"
-          >
-            <path
-              d="M834.544 622.688L546.56 334.672l-0.016 0.016A47.84 47.84 0 0 0 512 320h-0.224a47.84 47.84 0 0 0-34.544 14.688l-0.016-0.016-288 288 0.128 0.128a48 48 0 1 0 71.056 64.464l251.488-251.488L766.672 690.56l0.016-0.016a48 48 0 0 0 67.856-67.856z"
-              p-id="3749"
-            ></path>
-          </svg>
+          <code-block-icon />
         </span>
         <span>收起代码</span>
       </div>
@@ -80,6 +50,8 @@ import { computed, ref } from 'vue'
 import { useClipboard } from '@vueuse/core'
 import Example from './demo/vp-example.vue'
 import SourceCode from './demo/vp-source-code.vue'
+import copyIcon from './icon/copy-icon.vue'
+import codeBlockIcon from './icon/code-block-icon.vue'
 import { LuDivider, LuCollapseTransition, LuTooltip } from '@luna-view/components'
 
 type DemosType = { [key: string]: any }

@@ -4,6 +4,7 @@ importers:
 
   .:
     specifiers:
+      '@element-plus/icons-vue': ^2.1.0
       '@luna-view/build-config': workspace:*
       '@luna-view/components': workspace:*
       '@luna-view/eslint-config': workspace:*
@@ -21,6 +22,7 @@ importers:
       vue: ^3.2.36
       vue-tsc: ^1.0.24
     dependencies:
+      '@element-plus/icons-vue': registry.npmmirror.com/@element-plus/icons-vue/2.1.0_vue@3.2.36
       '@luna-view/components': link:packages/components
       '@luna-view/hooks': link:packages/hooks
       '@luna-view/theme': link:packages/theme
@@ -85,6 +87,7 @@ importers:
 
   docs:
     specifiers:
+      '@element-plus/icons-vue': ^2.1.0
       '@types/markdown-it': ^12.2.3
       '@types/markdown-it-container': ^2.0.5
       '@types/nprogress': ^0.2.0
@@ -101,6 +104,7 @@ importers:
       vite: ^4.0.4
       vitepress: 1.0.0-alpha.49
     dependencies:
+      '@element-plus/icons-vue': registry.npmmirror.com/@element-plus/icons-vue/2.1.0
       '@vueuse/core': registry.npmmirror.com/@vueuse/core/9.13.0
       highlight.js: registry.npmmirror.com/highlight.js/11.7.0
       markdown-it: registry.npmmirror.com/markdown-it/13.0.1
@@ -149,12 +153,14 @@ importers:
 
   packages/luna-view:
     specifiers:
+      '@element-plus/icons-vue': ^2.1.0
       '@popperjs/core': ^2.11.6
       '@types/node': '*'
       '@vueuse/core': ^9.13.0
       vue: ^3.2.37
       vue-router: ^4.0.16
     dependencies:
+      '@element-plus/icons-vue': registry.npmmirror.com/@element-plus/icons-vue/2.1.0_vue@3.2.47
       '@popperjs/core': registry.npmmirror.com/@popperjs/core/2.11.6
       '@vueuse/core': registry.npmmirror.com/@vueuse/core/9.13.0_vue@3.2.47
     devDependencies:
@@ -798,6 +804,36 @@ packages:
     transitivePeerDependencies:
       - '@algolia/client-search'
     dev: true
+
+  registry.npmmirror.com/@element-plus/icons-vue/2.1.0:
+    resolution: {integrity: sha512-PSBn3elNoanENc1vnCfh+3WA9fimRC7n+fWkf3rE5jvv+aBohNHABC/KAR5KWPecxWxDTVT1ERpRbOMRcOV/vA==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/@element-plus/icons-vue/-/icons-vue-2.1.0.tgz}
+    name: '@element-plus/icons-vue'
+    version: 2.1.0
+    peerDependencies:
+      vue: ^3.2.0
+    dev: false
+
+  registry.npmmirror.com/@element-plus/icons-vue/2.1.0_vue@3.2.36:
+    resolution: {integrity: sha512-PSBn3elNoanENc1vnCfh+3WA9fimRC7n+fWkf3rE5jvv+aBohNHABC/KAR5KWPecxWxDTVT1ERpRbOMRcOV/vA==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/@element-plus/icons-vue/-/icons-vue-2.1.0.tgz}
+    id: registry.npmmirror.com/@element-plus/icons-vue/2.1.0
+    name: '@element-plus/icons-vue'
+    version: 2.1.0
+    peerDependencies:
+      vue: ^3.2.0
+    dependencies:
+      vue: registry.npmmirror.com/vue/3.2.36
+    dev: false
+
+  registry.npmmirror.com/@element-plus/icons-vue/2.1.0_vue@3.2.47:
+    resolution: {integrity: sha512-PSBn3elNoanENc1vnCfh+3WA9fimRC7n+fWkf3rE5jvv+aBohNHABC/KAR5KWPecxWxDTVT1ERpRbOMRcOV/vA==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/@element-plus/icons-vue/-/icons-vue-2.1.0.tgz}
+    id: registry.npmmirror.com/@element-plus/icons-vue/2.1.0
+    name: '@element-plus/icons-vue'
+    version: 2.1.0
+    peerDependencies:
+      vue: ^3.2.0
+    dependencies:
+      vue: registry.npmmirror.com/vue/3.2.47
+    dev: false
 
   registry.npmmirror.com/@esbuild-kit/cjs-loader/2.4.1:
     resolution: {integrity: sha512-lhc/XLith28QdW0HpHZvZKkorWgmCNT7sVelMHDj3HFdTfdqkwEKvT+aXVQtNAmCC39VJhunDkWhONWB7335mg==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/@esbuild-kit/cjs-loader/-/cjs-loader-2.4.1.tgz}

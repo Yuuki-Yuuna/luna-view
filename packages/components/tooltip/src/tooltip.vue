@@ -25,10 +25,10 @@
 </template>
 
 <script setup lang="ts">
-import { computed, provide, ref, toRef, unref, watch } from 'vue'
+import { computed, provide, ref, toRef, unref } from 'vue'
+import { isBoolean } from '@vueuse/core'
 import { LuPopper, LuPopperArrow } from '@luna-view/components/popper'
 import { useDelayedToggle, usePopperContainer } from '@luna-view/hooks'
-import { isBoolean } from '@luna-view/utils'
 import LuTooltipTrigger from './trigger.vue'
 import LuTooltipContent from './content.vue'
 import { tooltipEmits, tooltipProps } from './tooltip'

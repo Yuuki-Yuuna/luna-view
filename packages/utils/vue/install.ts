@@ -24,3 +24,13 @@ export const withNoopInstall = <T>(component: T) => {
 
   return component as SFCWithInstall<T>
 }
+
+// 函数安装
+export const withInstallFunction = <T>(fn: T, name: string) => {
+  ;(fn as SFCWithInstall<T>).install = (app) => {
+    // 一个用于注册能够被应用内所有组件实例访问到的全局属性的对象
+    app.config.globalProperties[name] = fn
+  }
+
+  return fn as SFCWithInstall<T>
+}

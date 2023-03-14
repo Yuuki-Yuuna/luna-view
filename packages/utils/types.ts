@@ -3,6 +3,4 @@ export const isElement = (e: unknown): e is Element => {
   return e instanceof Element
 }
 
-export const isBoolean = (val: unknown): val is boolean => {
-  return typeof val == 'boolean'
-}
+export const isUndefined = (val: unknown): val is undefined => val === undefined

@@ -9,6 +9,7 @@ html {
   // color
   @include set-component-css-var('color-primary', $primary-color);
   @include set-component-css-var('color-active', $active-color);
+  @include set-component-css-var('color-status', $status-color);
   @include set-component-css-var('text-color', $text-color);
   @include set-component-css-var('border-color', $border-color);
   @include set-component-css-var('fill-color', $fill-color);
