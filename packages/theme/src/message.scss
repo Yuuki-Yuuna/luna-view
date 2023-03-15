@@ -2,7 +2,7 @@
 @use 'mixins/mixins.scss' as *;
 
 $message: (
-  'bg-color': getCssVar('bg-color'),
+  'bg-color': getCssVar('bg-color', 'lighter'),
   'border-color': getCssVar('border-color', 'lighter'),
   'padding': 15px 19px,
   'text-color': getCssVar('text-color', 'regular'),

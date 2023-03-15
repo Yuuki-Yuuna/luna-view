@@ -18,6 +18,10 @@ const componentSidebar = [
         link: '/component/button'
       },
       {
+        text: 'Icon 图标',
+        link: '/component/icon'
+      },
+      {
         text: 'Space 间距',
         link: '/component/space'
       },
@@ -54,8 +58,21 @@ const componentSidebar = [
     ]
   },
   {
+    text: '数据展示',
+    items: [
+      {
+        text: 'Badge 徽章',
+        link: '/component/badge'
+      }
+    ]
+  },
+  {
     text: '反馈组件',
     items: [
+      {
+        text: 'Message 消息提示',
+        link: '/component/message'
+      },
       {
         text: 'Popover 气泡卡片',
         link: '/component/popover'

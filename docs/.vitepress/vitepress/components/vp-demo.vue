@@ -52,7 +52,7 @@ import Example from './demo/vp-example.vue'
 import SourceCode from './demo/vp-source-code.vue'
 import copyIcon from './icon/copy-icon.vue'
 import codeBlockIcon from './icon/code-block-icon.vue'
-import { LuDivider, LuCollapseTransition, LuTooltip } from '@luna-view/components'
+import { LuDivider, LuCollapseTransition, LuTooltip, LuMessage } from '@luna-view/components'
 
 type DemosType = { [key: string]: any }
 
@@ -85,9 +85,9 @@ const copyCode = async () => {
   if (isSupported) {
     try {
       await copy()
-      // console.log('ok')
-    } catch {
-      // console.log('error')
+      LuMessage.success('复制成功！')
+    } catch (error) {
+      LuMessage.error('复制失败！')
     }
   }
 }
@@ -140,7 +140,7 @@ const copyCode = async () => {
       font-size: 14px;
       margin-left: 10px;
     }
-    
+
     &:hover {
       color: var(--lu-color-primary-first);
       fill: var(--lu-color-primary-first);

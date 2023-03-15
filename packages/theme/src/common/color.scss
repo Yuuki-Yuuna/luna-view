@@ -19,7 +19,8 @@ $colors: (
     'warning': #ecbe92,
     'info': #988b88,
     'error': #eeaca6,
-    'danger': #f56c6c, //danger偷的element的
+    'danger': #f56c6c,
+    //danger偷的element的
   )
 );
 
@@ -46,5 +47,6 @@ $fill-color: (
 $bg-color: (
   '': #ffffff,
   'overlay': #ffffff,
-  'light': #ececec
+  'light': #ececec,
+  'lighter': #ffffff
 );

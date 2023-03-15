@@ -7,14 +7,12 @@
 
 <script setup lang="ts">
 import { ref } from 'vue'
-import { LuBadge, LuButton, LuMessage } from '@luna-view/components'
+import { LuBadge, LuButton, LuMessage, LuTooltip } from '@luna-view/components'
 
 const onClick = () => {
   LuMessage({
     type: 'success',
-    message: 'hello world!',
-    showClose: true,
-    grouping: true
+    message: 'hello world!'
   })
   // LuMessage.success('hello world!')
   // LuMessage.info('hello world!')
