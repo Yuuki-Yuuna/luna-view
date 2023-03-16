@@ -9,6 +9,7 @@ export {}
 
 declare module '@vue/runtime-core' {
   export interface GlobalComponents {
+    ArrowUpIcon: typeof import('./.vitepress/vitepress/components/icon/arrow-up-icon.vue')['default']
     CodeBlockIcon: typeof import('./.vitepress/vitepress/components/icon/code-block-icon.vue')['default']
     CopyIcon: typeof import('./.vitepress/vitepress/components/icon/copy-icon.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
@@ -17,5 +18,6 @@ declare module '@vue/runtime-core' {
     VpDemo: typeof import('./.vitepress/vitepress/components/vp-demo.vue')['default']
     VpExample: typeof import('./.vitepress/vitepress/components/demo/vp-example.vue')['default']
     VpSourceCode: typeof import('./.vitepress/vitepress/components/demo/vp-source-code.vue')['default']
+    VpTips: typeof import('./.vitepress/vitepress/components/vp-tips.vue')['default']
   }
 }

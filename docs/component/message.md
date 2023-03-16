@@ -8,7 +8,11 @@
 
 消息内容支持字符串和 VNode 节点
 
-tips：作为 plugin 引入时， lu-message 会注册一个全局的 `$message` 方法用于调用
+<VpTips name="luna">
+
+作为 plugin 引入时， lu-message 会注册一个全局的 `$message` 方法用于调用
+
+</VpTips>
 
 ::: demo
 
@@ -62,7 +66,11 @@ message/dangerouslyUseHTML
 
 :::
 
-warning: 在网站上动态渲染任意 HTML 是非常危险的，在 `dangerouslyUseHTMLString` 打开的情况下，请确保 `message` 的内容是可信的，永远不要将用户提交的内容赋值给 `message` 属性
+<VpTips name="asahi">
+
+敬请注意，在网站上动态渲染任意 HTML 是非常危险的，在 `dangerouslyUseHTMLString` 打开的情况下，请确保 `message` 的内容是可信的，永远不要将用户提交的内容赋值给 `message` 属性
+
+</VpTips>
 
 ## 分组消息合并
 

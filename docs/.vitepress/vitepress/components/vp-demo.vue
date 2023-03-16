@@ -12,21 +12,7 @@
       </LuTooltip>
       <LuTooltip :show-arrow="false" effect="dark">
         <span class="icon" @click="sourceVisible = !sourceVisible">
-          <svg
-            t="1677983935309"
-            class="icon"
-            viewBox="0 0 1024 1024"
-            version="1.1"
-            xmlns="http://www.w3.org/2000/svg"
-            p-id="4427"
-            width="20"
-            height="20"
-          >
-            <path
-              d="M353.834667 268.501333L110.336 512l243.498667 243.498667 60.330666-60.330667L230.997333 512l183.168-183.168z m316.330666 486.997334L913.664 512l-243.498667-243.498667-60.330666 60.330667L793.002667 512l-183.168 183.168z"
-              p-id="4428"
-            ></path>
-          </svg>
+          <code-block-icon />
         </span>
         <template #content>查看代码</template>
       </LuTooltip>
@@ -37,7 +23,7 @@
     <Transition name="el-fade-in-linear">
       <div v-show="sourceVisible" class="example-float-control" @click="sourceVisible = false">
         <span class="icon">
-          <code-block-icon />
+          <arrow-up-icon />
         </span>
         <span>收起代码</span>
       </div>
@@ -52,6 +38,7 @@ import Example from './demo/vp-example.vue'
 import SourceCode from './demo/vp-source-code.vue'
 import copyIcon from './icon/copy-icon.vue'
 import codeBlockIcon from './icon/code-block-icon.vue'
+import arrowUpIcon from './icon/arrow-up-icon.vue'
 import { LuDivider, LuCollapseTransition, LuTooltip, LuMessage } from '@luna-view/components'
 
 type DemosType = { [key: string]: any }

@@ -58,6 +58,15 @@
   }
 }
 
+//不滚动时隐藏滚动条
+.VPSidebar {
+  overflow-y: hidden;
+  
+  &:hover {
+    overflow-y: auto;
+  }
+}
+
 // 右侧导航
 .root {
   .outline-link.active {
