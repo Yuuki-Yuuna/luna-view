@@ -1,5 +1,5 @@
 import { createVNode, isVNode, render } from 'vue'
-import { isFunction, isString } from '@vueuse/core'
+import { isClient, isFunction, isString } from '@vueuse/core'
 import { useZIndex } from '@luna-view/hooks'
 import { isElement } from '@luna-view/utils'
 import MessageConstructor from './message.vue'
@@ -108,6 +108,10 @@ const createMessage = (options: MessageParamsNormalized) => {
 
 // 这个函数中暂时不会添加success一类的函数，故均为可选值(Partial)
 const message: MessageFn & Partial<Message> = (options) => {
+  if (!isClient) {
+    return { close: () => undefined }
+  }
+
   const normalized = normalizeOptions(options)
 
   // 重复消息合并

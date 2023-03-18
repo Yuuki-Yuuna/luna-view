@@ -12,17 +12,22 @@
     tabindex="-1"
   >
     <div ref="headerRef" :class="ns.e('header')">
-      <span :class="ns.e('title')">
-        {{ title }}
-      </span>
-      <button v-if="showClose" :class="ns.e('headerbtn')" type="button" @click="$emit('close')">
-        <lu-icon :class="ns.e('close')">
-          <component :is="closeIcon || Close" />
-        </lu-icon>
-      </button>
+      <slot name="header">
+        <span :class="ns.e('title')">
+          {{ title }}
+        </span>
+        <button v-if="showClose" :class="ns.e('headerbtn')" type="button" @click="$emit('close')">
+          <lu-icon :class="ns.e('close')">
+            <component :is="closeIcon || Close" />
+          </lu-icon>
+        </button>
+      </slot>
     </div>
     <div :class="ns.e('body')">
       <slot />
+    </div>
+    <div v-if="$slots.footer" :class="ns.e('footer')">
+      <slot name="footer" />
     </div>
   </div>
 </template>

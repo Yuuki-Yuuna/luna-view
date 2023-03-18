@@ -6,6 +6,12 @@ title: Slider
 
 通过拖动滑块在一个固定区间内进行选择
 
+::: tip
+
+在 SSR ([Nuxt](https://nuxt.com/blog/v3))和 SSG ([VitePress](https://vitepress.dev/))场景下，你需要将组件包裹在 `<client-only></client-only>` 中
+
+:::
+
 ## 基础用法
 
 在拖动滑块时，会显示当前值

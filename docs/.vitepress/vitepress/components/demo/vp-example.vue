@@ -1,6 +1,8 @@
 <template>
   <div class="example-showcase">
-    <component :is="demo" v-if="demo" v-bind="$attrs" />
+    <ClientOnly>
+      <component :is="demo" v-if="demo" v-bind="$attrs" />
+    </ClientOnly>
   </div>
 </template>
 

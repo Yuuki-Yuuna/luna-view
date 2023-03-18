@@ -1,3 +1,4 @@
+import { isClient } from '@vueuse/core'
 import { buildProps, definePropType } from '@luna-view/utils'
 
 import type { Component, ExtractPropTypes, VNode } from 'vue'
@@ -22,7 +23,7 @@ export const messageDefaults = {
   zIndex: 0,
   grouping: false,
   repeatNum: 1,
-  appendTo: document.body
+  appendTo: isClient ? document.body : (undefined as never) // 不检测使用SSR和SSG会报错，vitepress使用踩雷
 } as const
 
 export const messageProps = buildProps({

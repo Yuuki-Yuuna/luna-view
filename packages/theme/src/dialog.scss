@@ -25,7 +25,7 @@ $dialog: (
   border-radius: getCssVar('dialog', 'border-radius');
   box-shadow: getCssVar('dialog', 'box-shadow');
   box-sizing: border-box;
-  width: getCssVar('dialog-width');
+  width: getCssVar('dialog', 'width');
 
   @include when(align-center) {
     margin: auto;
@@ -82,6 +82,13 @@ $dialog: (
     font-size: getCssVar('dialog', 'content-font-size');
   }
 
+  @include e(footer) {
+    padding: getCssVar('dialog', 'padding-primary');
+    padding-top: 10px;
+    text-align: right;
+    box-sizing: border-box;
+  }
+
   // 内容居中布局
   @include m(center) {
     text-align: center;
@@ -89,6 +96,10 @@ $dialog: (
     @include e(body) {
       text-align: initial;
       padding: 25px calc(#{getCssVar('dialog', 'padding-primary')} + 5px) 30px;
+    }
+
+    @include e(footer) {
+      text-align: inherit;
     }
   }
 }

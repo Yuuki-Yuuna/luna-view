@@ -11,6 +11,7 @@
     "skipLibCheck": true,
     "jsx": "preserve",
     "lib": ["ESNext", "WebWorker"],
+    "types": ["vite/client"],
     "paths": {
       "luna-view": ["../packages/luna-view"],
       "~/*": ["./.vitepress/vitepress/*"]

@@ -54,6 +54,10 @@ export const dialogProps = buildProps({
   // 锁定滚动条
   lockScroll: {
     type: Boolean,
+    default: true
+  },
+  appendToBody: {
+    type: Boolean,
     default: false
   }
 } as const)

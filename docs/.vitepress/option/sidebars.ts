@@ -49,7 +49,7 @@ const componentSidebar = [
     ]
   },
   {
-    text: 'Navigation 导航组件',
+    text: '导航组件',
     items: [
       {
         text: 'Dropdown 下拉菜单',
@@ -69,6 +69,10 @@ const componentSidebar = [
   {
     text: '反馈组件',
     items: [
+      {
+        text: 'Dialog 对话框',
+        link: '/component/dialog'
+      },
       {
         text: 'Message 消息提示',
         link: '/component/message'

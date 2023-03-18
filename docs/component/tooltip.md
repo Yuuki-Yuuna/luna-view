@@ -2,6 +2,12 @@
 
 简单的文字提示气泡框，使用 lu-popper 实现
 
+::: tip
+
+在 SSR ([Nuxt](https://nuxt.com/blog/v3))和 SSG ([VitePress](https://vitepress.dev/))场景下，你需要将组件包裹在 `<client-only></client-only>` 中
+
+:::
+
 ## 基础用法
 
 使用 Tooltip 包裹需要提示的内容, 通过 content 插槽插入提示信息
@@ -77,7 +83,7 @@ tooltip/customized-trigger
 | effect         | tooltip 主题                          | `'light'` \| `'dark'`                                  | light                |
 | show-arrow     | 是否展示箭头                          | `boolean`                                              | true                 |
 | disabled       | 是否禁用                              | `boolean`                                              | false                |
-| open-status    | 自定义 tooltip 的显示和隐藏          | `boolean`                                              | -                    |
+| open-status    | 自定义 tooltip 的显示和隐藏           | `boolean`                                              | -                    |
 | popper-class   | 为 tooltip 的 popper 添加类名         | `string`                                               | -                    |
 | popper-style   | 为 tooltip 的 popper 添加样式         | `StyleValue`                                           | -                    |
 | enterable      | 鼠标是否可进入到 tooltip 中           | `boolean`                                              | true                 |

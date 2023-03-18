@@ -17,6 +17,7 @@
     "build:theme": "pnpm run -C packages/themes build",
     "docs:dev": "pnpm run -C docs dev",
     "docs:build": "pnpm run -C docs build",
+    "docs:preview": "pnpm run -C docs preview",
     "stub": "pnpm run -r --parallel stub",
     "postinstall": "pnpm stub"
   },

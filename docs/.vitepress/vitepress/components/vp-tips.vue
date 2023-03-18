@@ -26,7 +26,7 @@ const imgStyle = ref<CSSProperties>({})
 useResizeObserver(wrapperRef, () => {
   const content = unref(contentRef)!
   const style = unref(imgStyle)
-  style.marginTop = `${content.clientHeight / 2}px`
+  style.marginTop = `${content.clientHeight / 3}px`
 })
 </script>
 

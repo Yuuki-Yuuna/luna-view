@@ -1,34 +1,36 @@
 <template>
-  <p text="sm" v-html="decodedDescription"></p>
-  <div class="example">
-    <Example :file="path" :demo="formatPathDemos[path]" />
-    <LuDivider />
-    <div class="op-btns">
-      <LuTooltip :show-arrow="false" effect="dark">
-        <span class="icon" @click="copyCode">
-          <copy-icon />
-        </span>
-        <template #content>复制</template>
-      </LuTooltip>
-      <LuTooltip :show-arrow="false" effect="dark">
-        <span class="icon" @click="sourceVisible = !sourceVisible">
-          <code-block-icon />
-        </span>
-        <template #content>查看代码</template>
-      </LuTooltip>
-    </div>
-    <LuCollapseTransition>
-      <SourceCode v-show="sourceVisible" :source="source" />
-    </LuCollapseTransition>
-    <Transition name="el-fade-in-linear">
-      <div v-show="sourceVisible" class="example-float-control" @click="sourceVisible = false">
-        <span class="icon">
-          <arrow-up-icon />
-        </span>
-        <span>收起代码</span>
+  <ClientOnly>
+    <p text="sm" v-html="decodedDescription"></p>
+    <div class="example">
+      <Example :file="path" :demo="formatPathDemos[path]" />
+      <LuDivider />
+      <div class="op-btns">
+        <LuTooltip :show-arrow="false" effect="dark">
+          <span class="icon" @click="copyCode">
+            <copy-icon />
+          </span>
+          <template #content>复制</template>
+        </LuTooltip>
+        <LuTooltip :show-arrow="false" effect="dark">
+          <span class="icon" @click="sourceVisible = !sourceVisible">
+            <code-block-icon />
+          </span>
+          <template #content>查看代码</template>
+        </LuTooltip>
       </div>
-    </Transition>
-  </div>
+      <LuCollapseTransition>
+        <SourceCode v-show="sourceVisible" :source="source" />
+      </LuCollapseTransition>
+      <Transition name="el-fade-in-linear">
+        <div v-show="sourceVisible" class="example-float-control" @click="sourceVisible = false">
+          <span class="icon">
+            <arrow-up-icon />
+          </span>
+          <span>收起代码</span>
+        </div>
+      </Transition>
+    </div>
+  </ClientOnly>
 </template>
 
 <script setup lang="ts">

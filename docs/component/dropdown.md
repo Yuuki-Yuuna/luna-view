@@ -2,6 +2,12 @@
 
 向下弹出的列表，实际上也是套壳 Tooltip
 
+::: tip
+
+在 SSR ([Nuxt](https://nuxt.com/blog/v3))和 SSG ([VitePress](https://vitepress.dev/))场景下，你需要将组件包裹在 `<client-only></client-only>` 中
+
+:::
+
 ## 基础用法
 
 悬停在下拉菜单上以展开更多操作

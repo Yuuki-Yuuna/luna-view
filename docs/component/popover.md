@@ -2,6 +2,12 @@
 
 弹出气泡式的卡片浮层，同样使用 lu-popper 实现
 
+::: tip
+
+在 SSR ([Nuxt](https://nuxt.com/blog/v3))和 SSG ([VitePress](https://vitepress.dev/))场景下，你需要将组件包裹在 `<client-only></client-only>` 中
+
+:::
+
 ## 基础用法
 
 实际上就是个套壳 Tooltip，支持所有 lu-tooltip 的属性
@@ -37,7 +43,7 @@ popover/nested-operation
 | effect         | tooltip 主题                          | `'light'` \| `'dark'`                                  | light                |
 | show-arrow     | 是否展示箭头                          | `boolean`                                              | true                 |
 | disabled       | 是否禁用                              | `boolean`                                              | false                |
-| open-status    | 自定义 tooltip 的显示和隐藏          | `boolean`                                              | -                    |
+| open-status    | 自定义 tooltip 的显示和隐藏           | `boolean`                                              | -                    |
 | popper-class   | 为 tooltip 的 popper 添加类名         | `string`                                               | -                    |
 | popper-style   | 为 tooltip 的 popper 添加样式         | `StyleValue`                                           | -                    |
 | enterable      | 鼠标是否可进入到 tooltip 中           | `boolean`                                              | true                 |

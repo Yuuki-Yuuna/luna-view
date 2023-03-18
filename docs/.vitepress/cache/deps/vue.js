@@ -14,8 +14,6 @@ import {
   VueElement,
   callWithAsyncErrorHandling,
   callWithErrorHandling,
-  camelize,
-  capitalize,
   cloneVNode,
   compatUtils,
   compile,
@@ -66,9 +64,6 @@ import {
   mergeDefaults,
   mergeProps,
   nextTick,
-  normalizeClass,
-  normalizeProps,
-  normalizeStyle,
   onActivated,
   onBeforeMount,
   onBeforeUnmount,
@@ -109,8 +104,6 @@ import {
   ssrContextKey,
   ssrUtils,
   stop,
-  toDisplayString,
-  toHandlerKey,
   toHandlers,
   toRaw,
   toRef,
@@ -144,7 +137,16 @@ import {
   withMemo,
   withModifiers,
   withScopeId
-} from "./chunk-4HZL7SK5.js";
+} from "./chunk-VPO3OTJN.js";
+import {
+  camelize,
+  capitalize,
+  normalizeClass,
+  normalizeProps,
+  normalizeStyle,
+  toDisplayString,
+  toHandlerKey
+} from "./chunk-TNQUTK6B.js";
 import "./chunk-RSJERJUL.js";
 export {
   BaseTransition,

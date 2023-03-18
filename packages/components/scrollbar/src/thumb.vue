@@ -18,7 +18,7 @@
 
 <script setup lang="ts">
 import { computed, inject, onBeforeUnmount, ref, unref } from 'vue'
-import { useEventListener } from '@vueuse/core'
+import { isClient, useEventListener } from '@vueuse/core'
 import { useNamespace } from '@luna-view/hooks'
 import { thumbProps } from './thumb'
 import { BAR_MAP, renderThumbStyle } from './util'
@@ -38,8 +38,9 @@ const ns = useNamespace('scrollbar')
 
 let cursorDown = false
 let cursorLeave = false
-let originalOnSelectStart: ((this: GlobalEventHandlers, ev: Event) => any) | null =
-  document.onselectstart
+let originalOnSelectStart: ((this: GlobalEventHandlers, ev: Event) => any) | null = isClient
+  ? document.onselectstart
+  : null
 
 const thumbState = ref<Partial<Record<'X' | 'Y', number>>>({})
 const visible = ref(false)

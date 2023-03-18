@@ -49,7 +49,7 @@ export const useLockscreen = (trigger: Ref<boolean>) => {
       (bodyHasOverflow || bodyOverflowY === 'scroll') &&
       withoutHiddenClass
     ) {
-      document.body.style.width = `calc(100% - ${scrollBarWidth}px)`
+      document.body.style.width = `calc(100% - ${scrollBarWidth}px)` //原生滚动条会占宽度，宽度占用要保留
     }
     addClass(document.body, hiddenClass)
   })

@@ -7,14 +7,12 @@
   "author": "",
   "scripts": {
     "dev": "vitepress dev .",
-    "build": "vitepress build ."
+    "build": "vitepress build .",
+    "preview": "vitepress preview ."
   },
   "dependencies": {
     "@element-plus/icons-vue": "^2.1.0",
     "@vueuse/core": "^9.13.0",
-    "highlight.js": "^11.7.0",
-    "markdown-it": "^13.0.1",
-    "markdown-it-container": "^3.0.0",
     "nprogress": "^0.2.0"
   },
   "devDependencies": {
@@ -23,6 +21,9 @@
     "@types/nprogress": "^0.2.0",
     "@vitejs/plugin-vue-jsx": "^3.0.0",
     "glob": "^9.2.1",
+    "highlight.js": "^11.7.0",
+    "markdown-it": "^13.0.1",
+    "markdown-it-container": "^3.0.0",
     "sass": "^1.57.1",
     "unplugin-vue-components": "^0.24.0",
     "unplugin-vue-define-options": "^1.2.3",

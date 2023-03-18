@@ -6,17 +6,17 @@
 
 通过 `height` 属性设置滚动条高度，若不设置则根据父容器高度自适应
 
-<VpTips name="ursule">
-
-滚动条没有占体积，而是定位在最右侧，可通过设置右边距留出位置
-
-</VpTips>
-
 ::: demo
 
 scrollbar/basic
 
 :::
+
+<VpTips name="ursule">
+
+滚动条没有占体积，而是定位在最右侧，可通过设置右边距留出位置
+
+</VpTips>
 
 ## 横向滚动
 

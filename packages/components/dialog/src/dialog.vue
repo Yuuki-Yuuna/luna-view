@@ -1,5 +1,5 @@
 <template>
-  <teleport to="body">
+  <teleport to="body" :disabled="!appendToBody">
     <transition
       name="dialog-fade"
       @after-enter="afterEnter"
@@ -32,7 +32,13 @@
             :title="title"
             @close="handleClose"
           >
+            <template v-if="$slots.header" #header>
+              <slot name="header" />
+            </template>
             <slot />
+            <template v-if="$slots.footer" #footer>
+              <slot name="footer" />
+            </template>
           </lu-dialog-content>
         </div>
       </lu-overlay>

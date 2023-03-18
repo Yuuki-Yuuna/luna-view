@@ -4,6 +4,8 @@
   --vp-c-brand-lighter: var(--lu-color-primary-third);
   --vp-c-brand-dark: var(--lu-color-active-second);
   --vp-c-brand-darker: var(--lu-color-active-first);
+  --vp-custom-block-tip-border: var(--lu-color-primary-first);
+  --vp-custom-block-tip-text: var(--lu-color-primary-first);
   /* --vp-sidebar-bg-color: var(--lu-bg-color-light) */
 }
 
@@ -27,6 +29,20 @@
 
   &.active {
     border-bottom: 2px solid var(--lu-color-primary-first);
+  }
+}
+
+.VPNav {
+  @media (min-width: 960px) {
+    position: sticky !important;
+  }
+}
+
+.Layout .VPSidebar {
+  // body的width会被修改，使用vw替换
+  @media (min-width: 1440px) {
+    padding-left: max(32px, calc((100vw - (var(--vp-layout-max-width) - 64px)) / 2));
+    width: calc((100vw - (var(--vp-layout-max-width) - 64px)) / 2 + var(--vp-sidebar-width) - 32px);
   }
 }
 
@@ -61,7 +77,7 @@
 //不滚动时隐藏滚动条
 .VPSidebar {
   overflow-y: hidden;
-  
+
   &:hover {
     overflow-y: auto;
   }
