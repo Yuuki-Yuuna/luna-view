@@ -5,6 +5,15 @@ import {
   SuccessFilled,
   WarningFilled
 } from '@element-plus/icons-vue'
+import { definePropType } from './props'
+
+import type { Component } from 'vue'
+
+export const iconPropType = definePropType<string | Component>([String, Object, Function])
+
+export const CloseComponents = {
+  Close
+}
 
 export const TypeComponents = {
   Close,

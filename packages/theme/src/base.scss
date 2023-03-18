@@ -14,6 +14,7 @@ html {
   @include set-component-css-var('border-color', $border-color);
   @include set-component-css-var('fill-color', $fill-color);
   @include set-component-css-var('bg-color', $bg-color);
+  @include set-component-css-var('overlay-color', $overlay-color);
 
   // var
   @include set-component-css-var('font-size', $font-size);

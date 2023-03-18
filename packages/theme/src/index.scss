@@ -1,5 +1,6 @@
 @use './base.scss';
 @use './common/transition.scss';
+@use './common/popup.scss';
 
 //组件样式
 @use './button.scss';
@@ -16,3 +17,5 @@
 @use './icon.scss';
 @use './message.scss';
 @use './badge.scss';
+@use './overlay.scss';
+@use './dialog.scss';
