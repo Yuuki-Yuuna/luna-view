@@ -4,7 +4,7 @@
 $dialog: (
   'width': 50%,
   'margin-top': 15vh,
-  'bg-color': getCssVar('bg-color'),
+  'bg-color': getCssVar('bg-color', 'lighter'),
   'box-shadow': getCssVar('box-shadow'),
   'title-font-size': getCssVar('font-size', 'large'),
   'content-font-size': 14px,

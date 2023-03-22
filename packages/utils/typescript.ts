@@ -10,3 +10,7 @@ export type ClassType = string | ClassObjectType | ClassType[]
 
 //Mutable可变的, 为所有成员消去readonly属性
 export type Mutable<T> = { -readonly [P in keyof T]: T[P] }
+
+export type Nullable<T> = T | null //可为空的
+export type Arrayable<T> = T | T[]
+export type Awaitable<T> = Promise<T> | T //可以返回promise的

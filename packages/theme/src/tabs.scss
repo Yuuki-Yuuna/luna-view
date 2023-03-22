@@ -1,0 +1,246 @@
+@use 'mixins/mixins.scss' as *;
+@use './common/transition.scss' as *;
+
+$tabs: (
+  'header-height': 40px,
+  'active-color': getCssVar('color-primary', 'first'),
+  'bar-color': getCssVar('bg-color', 'light')
+);
+
+@include b(tabs) {
+  @include set-component-css-var('tabs', $tabs);
+}
+
+@include b(tabs) {
+  max-width: 100%;
+  height: 100%;
+
+  @include e(header) {
+    position: relative;
+    margin: 0 0 15px;
+    padding: 0;
+  }
+
+  @include e(nav-wrap) {
+    position: relative;
+    overflow: hidden;
+
+    // 背景条
+    &::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 100%;
+      height: 2px;
+      background-color: getCssVar('tabs', 'bar-color');
+      z-index: 0;
+    }
+
+    @include when(scrollable) {
+      padding: 0 24px;
+      box-sizing: border-box;
+    }
+  }
+
+  @include e(nav-scroll) {
+    overflow: hidden;
+  }
+
+  @include e(active-bar) {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 2px;
+    background-color: getCssVar('tabs', 'active-color');
+    z-index: 1;
+    transition: width 0.3s $transition-function-ease-in-out-bezier,
+      transform 0.3s $transition-function-ease-in-out-bezier;
+    list-style: none;
+  }
+
+  @include e((nav-next, nav-prev)) {
+    position: absolute;
+    cursor: pointer;
+    line-height: 44px;
+    font-size: 12px;
+    color: getCssVar('text-color', 'regular');
+    width: 20px;
+    text-align: center;
+  }
+  @include e(nav-next) {
+    right: 0;
+  }
+  @include e(nav-prev) {
+    left: 0;
+  }
+
+  @include e(nav) {
+    white-space: nowrap;
+    position: relative;
+    transition: transform 0.3s;
+    float: left;
+    z-index: 2;
+
+    @include when(stretch) {
+      min-width: 100%;
+      display: flex;
+      & > * {
+        flex: 1;
+        text-align: center;
+      }
+    }
+  }
+
+  @include e(item) {
+    padding: 0 20px;
+    height: getCssVar('tabs', 'header-height');
+    box-sizing: border-box;
+    line-height: getCssVar('tabs', 'header-height');
+    display: inline-block;
+    list-style: none;
+    font-size: getCssVar('font-size', 'base');
+    font-weight: 500;
+    color: getCssVar('text-color', 'primary');
+    position: relative;
+
+    @include when(active) {
+      color: getCssVar('tabs', 'active-color');
+    }
+    &:hover {
+      color: getCssVar('tabs', 'active-color');
+      cursor: pointer;
+    }
+    @include when(disabled) {
+      color: getCssVar('text-color', 'disabled');
+      cursor: not-allowed;
+    }
+  }
+
+  @include e(content) {
+    overflow: hidden;
+    position: relative;
+  }
+
+  @include m((top, bottom)) {
+    .#{$namespace}-tabs__item.is-top:nth-child(2),
+    .#{$namespace}-tabs__item.is-bottom:nth-child(2) {
+      padding-left: 0;
+    }
+    .#{$namespace}-tabs__item.is-top:last-child,
+    .#{$namespace}-tabs__item.is-bottom:last-child {
+      padding-right: 0;
+    }
+  }
+  @include m(bottom) {
+    .#{$namespace}-tabs__header.is-bottom {
+      margin-bottom: 0;
+      margin-top: 10px;
+    }
+  }
+  @include m((left, right)) {
+    overflow: hidden;
+
+    .#{$namespace}-tabs__header.is-left,
+    .#{$namespace}-tabs__header.is-right,
+    .#{$namespace}-tabs__nav-wrap.is-left,
+    .#{$namespace}-tabs__nav-wrap.is-right,
+    .#{$namespace}-tabs__nav-scroll {
+      height: 100%;
+    }
+
+    .#{$namespace}-tabs__active-bar.is-left,
+    .#{$namespace}-tabs__active-bar.is-right {
+      top: 0;
+      bottom: auto;
+      width: 2px;
+      height: auto;
+    }
+
+    .#{$namespace}-tabs__nav-wrap.is-left,
+    .#{$namespace}-tabs__nav-wrap.is-right {
+      margin-bottom: 0;
+
+      > .#{$namespace}-tabs__nav-prev,
+      > .#{$namespace}-tabs__nav-next {
+        height: 30px;
+        line-height: 30px;
+        width: 100%;
+        text-align: center;
+        cursor: pointer;
+
+        i {
+          transform: rotateZ(90deg);
+        }
+      }
+      > .#{$namespace}-tabs__nav-prev {
+        left: auto;
+        top: 0;
+      }
+      > .#{$namespace}-tabs__nav-next {
+        right: auto;
+        bottom: 0;
+      }
+
+      &.is-scrollable {
+        padding: 30px 0;
+      }
+
+      &::after {
+        height: 100%;
+        width: 2px;
+        bottom: auto;
+        top: 0;
+      }
+    }
+
+    .#{$namespace}-tabs__nav.is-left,
+    .#{$namespace}-tabs__nav.is-right {
+      float: none;
+    }
+    .#{$namespace}-tabs__item.is-left,
+    .#{$namespace}-tabs__item.is-right {
+      display: block;
+    }
+  }
+  @include m(left) {
+    .#{$namespace}-tabs__header.is-left {
+      float: left;
+      margin-bottom: 0;
+      margin-right: 10px;
+    }
+    .#{$namespace}-tabs__nav-wrap.is-left {
+      margin-right: -1px;
+      &::after {
+        left: auto;
+        right: 0;
+      }
+    }
+    .#{$namespace}-tabs__active-bar.is-left {
+      right: 0;
+      left: auto;
+    }
+    .#{$namespace}-tabs__item.is-left {
+      text-align: right;
+    }
+  }
+  @include m(right) {
+    .#{$namespace}-tabs__header.is-right {
+      float: right;
+      margin-bottom: 0;
+      margin-left: 10px;
+    }
+
+    .#{$namespace}-tabs__nav-wrap.is-right {
+      margin-left: -1px;
+      &::after {
+        left: 0;
+        right: auto;
+      }
+    }
+
+    .#{$namespace}-tabs__active-bar.is-right {
+      left: 0;
+    }
+  }
+}

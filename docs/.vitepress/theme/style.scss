@@ -39,6 +39,13 @@
 }
 
 .Layout .VPSidebar {
+  //不滚动时隐藏滚动条
+  overflow-y: hidden;
+
+  &:hover {
+    overflow-y: auto;
+  }
+
   // body的width会被修改，使用vw替换
   @media (min-width: 1440px) {
     padding-left: max(32px, calc((100vw - (var(--vp-layout-max-width) - 64px)) / 2));
@@ -71,15 +78,6 @@
     @media (min-width: 1080px) {
       font-size: 54px;
     }
-  }
-}
-
-//不滚动时隐藏滚动条
-.VPSidebar {
-  overflow-y: hidden;
-
-  &:hover {
-    overflow-y: auto;
   }
 }
 
