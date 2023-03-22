@@ -54,6 +54,10 @@ const componentSidebar = [
       {
         text: 'Dropdown 下拉菜单',
         link: '/component/dropdown'
+      },
+      {
+        text: 'Tabs 标签页',
+        link: '/component/tabs'
       }
     ]
   },
