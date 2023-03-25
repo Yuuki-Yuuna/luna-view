@@ -6,7 +6,9 @@
       justifyContent: 'center',
       marginTop: '150px'
     }"
-  ></div>
+  >
+    <LuVideo v-model="time" src="/sos.mp4" />
+  </div>
 </template>
 
 <script setup lang="ts">
