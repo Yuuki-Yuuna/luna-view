@@ -92,4 +92,4 @@ scrollbar/smooth-scroll
 | handleScroll | 触发滚动事件          | `() => void`                         |
 | scrollTo     | 滚动至特定坐标        | `(options: ScrollToOptions) => void` |
 | update       | 手动更新滚动条状态    | `() => void`                         |
-| wrapRef      | 滚动条包裹的 ref 对象 | `Ref<HTMLDivElement>`                |
+| wrapRef      | 滚动条包裹的 ref 对象 | `HTMLDivElement`                |

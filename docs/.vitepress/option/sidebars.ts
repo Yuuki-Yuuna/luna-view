@@ -90,6 +90,15 @@ const componentSidebar = [
         link: '/component/tooltip'
       }
     ]
+  },
+  {
+    text: '其它组件',
+    items: [
+      {
+        text: 'Video 影像',
+        link: '/component/video'
+      }
+    ]
   }
 ]
 

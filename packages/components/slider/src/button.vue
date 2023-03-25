@@ -18,8 +18,11 @@
       :open-status="tooltipOpen"
     >
       <div
-        :class="[ns.e('button'), ns.em('button', size), { dragging: dragging }]"
-        :style="buttonStyle"
+        :class="[
+          ns.e('button'),
+          ns.em('button', size),
+          { dragging: dragging, hidden: !props.showButton }
+        ]"
       ></div>
       <template #content>
         <span>{{ formatTooltip ? formatTooltip(modelValue) : modelValue }}</span>
@@ -71,9 +74,9 @@ const currentPosition = computed(
 const wrapperStyle = computed<CSSProperties>(() =>
   props.vertical ? { bottom: currentPosition.value } : { left: currentPosition.value }
 )
-const buttonStyle = computed<CSSProperties>(() => ({
-  visibility: props.showButton ? 'visible' : 'hidden'
-}))
+// const buttonStyle = computed<CSSProperties>(() => ({
+//   visibility: props.showButton ? 'visible' : 'hidden'
+// }))
 
 const onButtonDown = (e: MouseEvent | TouchEvent) => {
   if (disabled.value) {

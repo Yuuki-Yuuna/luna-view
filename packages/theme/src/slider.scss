@@ -36,6 +36,13 @@ $slider-button-size: (
     position: relative;
     cursor: pointer;
 
+    &:hover .#{$namespace}-slider__button {
+      transform: scale(1);
+    }
+    &:hover .#{$namespace}-slider__button.dragging {
+      transform: scale(1.2);
+    }
+
     &.is-disabled {
       cursor: default;
 
@@ -104,6 +111,7 @@ $slider-button-size: (
     box-sizing: border-box;
     transition: 0.2s;
     user-select: none;
+    transition: all 0.3s ease-in-out;
 
     &:hover,
     &.dragging {
@@ -116,6 +124,11 @@ $slider-button-size: (
 
     &.dragging {
       cursor: grabbing;
+    }
+
+    &.hidden {
+      background-color: getCssVar('slider', 'main-bg-color');
+      transform: scale(0);
     }
 
     @each $size in (small, large) {

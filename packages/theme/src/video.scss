@@ -1,0 +1,182 @@
+@use 'mixins/mixins.scss' as *;
+
+$video: (
+  'schedule-color': getCssVar('color-active', 'third'),
+  'buffer-color': getCssVar('color-active', 'fourth'),
+  'current-color': getCssVar('color-primary', 'first'),
+  'control-text-color': #ececec
+);
+
+@include b(video) {
+  @include set-component-css-var('video', $video);
+}
+
+@include b(video) {
+  position: relative;
+
+  video {
+    width: 100%;
+    height: 100%;
+  }
+
+  // &:hover {
+  //   .#{$namespace}-video__controls {
+  //     opacity: 1;
+  //   }
+  //   .#{$namespace}-video__shadow-progress-wrap {
+  //     opacity: 0;
+  //   }
+  // }
+
+  &:fullscreen {
+    .#{$namespace}-video__shadow-progress-wrap {
+      visibility: hidden;
+    }
+  }
+
+  @include e(controls) {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: 0;
+    padding: 0;
+    z-index: 2000;
+    background-color: getCssVar('overlay-color', 'light');
+    transition: opacity 0.3s ease-in-out;
+    opacity: 0;
+  }
+
+  @include e(control-menu) {
+    display: flex;
+    color: getCssVar('video', 'control-text-color');
+    height: 32px;
+    margin: 8px 0;
+  }
+
+  @include e(control-item) {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 15px;
+    cursor: pointer;
+
+    &.#{$namespace}-video__control-flex {
+      flex: 1;
+      cursor: default;
+    }
+  }
+
+  @include e(control-time) {
+    font-size: getCssVar('font-size', 'small');
+  }
+
+  @include e(rate) {
+    margin: 0;
+    padding: 0;
+
+    &,
+    &.is-dark {
+      border: none;
+    }
+
+    ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+
+      li {
+        box-sizing: border-box;
+        cursor: pointer;
+        margin: 0;
+        padding: 4px 12px;
+        width: 100%;
+
+        &:hover {
+          background-color: getCssVar('text-color', 'placeholder');
+        }
+        &:first-child {
+          border-top-left-radius: getCssVar('border-radius', 'base');
+          border-top-right-radius: getCssVar('border-radius', 'base');
+        }
+        &:last-child {
+          border-bottom-left-radius: getCssVar('border-radius', 'base');
+          border-bottom-right-radius: getCssVar('border-radius', 'base');
+        }
+      }
+    }
+  }
+
+  & .#{$namespace}-slider.is-vertical .#{$namespace}-slider__runway {
+    margin: 0 6px;
+  }
+  @include e(volume) {
+    text-align: center;
+  }
+
+  @include e(shadow-progress-wrap) {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 2000;
+    transition: opacity 0.3s ease-in-out;
+
+    & .#{$namespace}-video-progress {
+      cursor: default;
+      margin: 0;
+    }
+  }
+}
+
+@include b(video-progress) {
+  position: relative;
+  margin: 0 6px;
+  height: 4px;
+  border-radius: getCssVar('border-radius', 'small');
+  cursor: pointer;
+
+  &:hover .#{$namespace}-video-button__wrap {
+    transform: scale(1);
+  }
+
+  @include e(schedule) {
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: getCssVar('video', 'schedule-color');
+  }
+
+  @include e(buffer) {
+    position: absolute;
+    left: 0;
+    height: 100%;
+    background-color: getCssVar('video', 'buffer-color');
+  }
+
+  @include e(current) {
+    position: absolute;
+    left: 0;
+    height: 100%;
+    background-color: getCssVar('video', 'current-color');
+  }
+}
+
+@include b(video-button) {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  bottom: 50%;
+  transform: translate(-50%, 50%);
+
+  @include e(wrap) {
+    width: 10px;
+    height: 10px;
+    border-radius: getCssVar('border-radius', 'circle');
+    background-color: getCssVar('video', 'current-color');
+    transition: all 0.3s ease-in-out;
+    transform: scale(0);
+  }
+}
