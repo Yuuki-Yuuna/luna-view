@@ -4,4 +4,4 @@
 
 ## 使用教程
 
-参考文档 [luna-view使用教程](https://luna-view.altria-caster.top)
+仅供学习交流，参考文档 [luna-view使用教程](https://luna-view.altria-caster.top)
